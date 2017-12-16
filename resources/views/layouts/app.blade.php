@@ -12,6 +12,9 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    
+    <link href="{{ asset('css/global2.css') }}" media="all" rel="stylesheet" type="text/css" />
+	<script type="text/javascript" src="{!! asset('js/app.min.js') !!}"></script>
 </head>
 <body>
     <div id="app">
@@ -38,12 +41,14 @@
                     <ul class="nav navbar-nav">
                         &nbsp;
                     </ul>
+                    
+                  
 
                     <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-right">
                         <!-- Authentication Links -->
                         @guest
-                            <li><a href="{{ route('login') }}">Login</a></li>
+                            <li ><a href="{{ route('login') }}">Login</a></li>
                             <li><a href="{{ route('register') }}">Register</a></li>
                         @else
                             <li class="dropdown">
@@ -76,5 +81,6 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
+    
 </body>
 </html>

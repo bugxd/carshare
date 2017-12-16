@@ -5,17 +5,25 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>CarShare</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
 
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+ 		<link href="{{ asset('css/global2.css') }}" media="all" rel="stylesheet" type="text/css" />
+		<script type="text/javascript" src="{!! asset('js/app.min.js') !!}"></script>
+		
+		<link href="{{ asset('css/global.css') }}" rel="stylesheet" />
+	   
     </head>
+    
     <body>
         <div class="flex-center position-ref full-height">
+        
+        <!-- MENU BAR -->
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <a class="navbar-brand" href="#">CarShare</a>
+                <a class="navbar-brand" href="#" style="color:red">CarShare</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -40,14 +48,14 @@
                             </div>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link disabled" href="#">Disabled</a>
+                            <a class="nav-link" href="#">FAQ</a>
                         </li>
                     </ul>
-                    <form class="form-inline my-2 my-lg-0">
-                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                    <form class="form-inline my-2 my-lg-0"  >
+                        <input class="searchField" type="search" placeholder="Search for available cars.." aria-label="Search" >
                         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                     </form>
-                    <ul class="navbar-nav mr-auto">
+                    <ul class="navbar-nav mr-auto"  >
                         @if (Route::has('login'))
                                 @auth
                                     <li class="nav-link"><a href="{{ url('/home') }}">Home</a></li>
@@ -59,6 +67,7 @@
                     </ul>
                 </div>
             </nav>
+            <!-- MENU BAR END -->
 
 
 
