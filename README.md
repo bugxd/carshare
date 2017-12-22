@@ -52,3 +52,9 @@
     php artisan make:migration create_cars_table --create=cars
     php artisan make:migration create_reservations_table --create=reservations
     php artisan make:migration create_user_car_table --create=user_car
+    
+##terminal commands for models
+    php artisan make:model Car
+    
+##termina commands refresh seed
+    php artisan migrate:refresh --seed
