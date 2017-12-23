@@ -45,6 +45,20 @@
                 <ul class="navbar-nav mr-auto"  >
                     @if (Route::has('login'))
                         @auth
+                            <li class="nav-item">
+                                <div class="dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        Dropdown
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" href="{{ url('/home') }}">Home</a>
+                                        <a class="dropdown-item" href="{{ url('/inscar') }}">Add a car</a>
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="#">Messages</a>
+                                    </div>
+                                </div>
+
+                            </li>
                             <li class="nav-link"><a href="{{ url('/home') }}">Home</a></li>
                         @else
                             <li class="nav-link"><a href="{{ route('login') }}">Login</a></li>
@@ -63,10 +77,12 @@
 
     <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
     <!-- Latest compiled and minified JavaScript Bootstrap -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script>
         @yield('script')
+        $('.dropdown-toggle').dropdown()
     </script>
 </body>
 </html>

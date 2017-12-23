@@ -21,6 +21,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/faq', 'HomeController@nav')->name('faq');
 
 Route::get('car', 'CarController@show')->name('car');
+Route::view('/inscar', 'car.inscar')->name('inscar');
 
 Route::get('/faq', function(){
     return view('faq');

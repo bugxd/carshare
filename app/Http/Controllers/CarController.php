@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Car;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -15,6 +16,11 @@ class CarController extends Controller
      */
     public function show()
     {
-        return view('car.car');
+        return view('car.showcar');
+    }
+
+    public function store(Request $request){
+        $car = Car::create($request->all());
+        return redirect()->route('home');
     }
 }

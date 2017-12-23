@@ -58,3 +58,6 @@
     
 ##termina commands refresh seed
     php artisan migrate:refresh --seed
+    
+help with eloquent
+    https://scotch.io/tutorials/a-guide-to-using-eloquent-orm-in-laravel
