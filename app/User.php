@@ -30,4 +30,8 @@ class User extends Authenticatable
     public function cars(){
         return $this->hasMany('Car');
     }
+
+    public function feedbacks(){
+        return $this->belongsTo('Feedback');
+    }
 }
