@@ -11,7 +11,8 @@
 
 @section('content')
 <form>
-    <div class="row">
+    <div class="container">
+        <div class="row">
         <div class="col-md-4 mb-3">
             <label for="validationDefault01">Marke</label>
             <input type="text" class="form-control" id="brand" placeholder="Marke" required>
@@ -98,5 +99,7 @@
     </div>
 
     <button class="btn btn-primary" type="submit">Submit form</button>
+    </div>
+
 </form>
 @endsection

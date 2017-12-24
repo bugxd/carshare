@@ -21,6 +21,7 @@ class CreateFeedbacksTable extends Migration
             $table->integer('car_id'); //Auto
 
             //belongs to user
+            $table->integer('user_id'); //Benutzer
             $table->timestamps();
         });
     }

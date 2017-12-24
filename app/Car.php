@@ -17,7 +17,4 @@ class Car extends Model
         return $this->belongsTo('User');
     }
 
-    public function feedbacks(){
-        return $this->belongsTo('Feedback');
-    }
 }
