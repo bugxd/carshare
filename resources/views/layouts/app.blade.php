@@ -22,10 +22,10 @@
 </head>
 <body>
 
-        @include('inc/navbar')
+    @include('inc/navbar')
 
+    <div class="container">
         @yield('content')
-
     </div>
 
     <!-- Scripts -->
