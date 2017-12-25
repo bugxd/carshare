@@ -52,7 +52,7 @@
         </div>
         <div class="col-md-2 mb-3">
             <label for="validationDefault03">Bauartgeschwindigkeit</label>
-            <input type="number" class="form-control" id="power" placeholder="Bauartgeschwindigkeit" required>
+            <input type="number" class="form-control" id="design_speed" placeholder="Bauartgeschwindigkeit" required>
         </div>
     </div>
     <div class="row">
@@ -86,7 +86,7 @@
     </div>
     <div class="row">
         <div class="col-md-8 mb-3">
-            <label for="validationDefault03">Weitere Beschreibung/Austattung</label>
+            <label for="validationDefault03">Beschreibung/Austattung</label>
             <input type="number" class="form-control" id="description" placeholder="Beschreibung oder Austattung" required>
         </div>
     </div>

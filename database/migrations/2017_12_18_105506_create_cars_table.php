@@ -32,6 +32,7 @@ class CreateCarsTable extends Migration
             $table->boolean('animal_allowed'); //yes,no
             $table->boolean('smoking_allowed'); //yes no
             $table->text('description'); //additional user infromation
+            $table->integer('price'); //per day in Euro
             $table->geometry('position'); //hopefully
             //belongs to user
             $table->integer('user_id');

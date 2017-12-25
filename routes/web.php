@@ -11,17 +11,14 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'CarController@index');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'CarController@index')->name('home');
 Route::get('/faq', 'HomeController@nav')->name('faq');
 
-Route::get('car', 'CarController@show')->name('car');
-Route::view('/inscar', 'car.inscar')->name('inscar');
+Route::resource('cars', 'CarController');
 
 Route::get('/faq', function(){
     return view('faq');
