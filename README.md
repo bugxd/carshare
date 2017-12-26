@@ -61,3 +61,4 @@
     
 help with eloquent
     https://scotch.io/tutorials/a-guide-to-using-eloquent-orm-in-laravel
+    https://www.youtube.com/watch?v=9ynXDwHK3wI&list=PLnBvgoOXZNCP2LEKmvu2W-eUkO-DYn0TL&index=27
