@@ -4,8 +4,10 @@ namespace App\Http\Controllers\Auth;
 
 use App\User;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Http\Request;
 
 class RegisterController extends Controller
 {
@@ -42,13 +44,14 @@ class RegisterController extends Controller
     /**
      * Get a validator for an incoming registration request.
      *
-     * @param  array  $data
+     * @param  array $data
      * @return \Illuminate\Contracts\Validation\Validator
      */
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => 'required|string|max:255',
+            'first_name' => 'required|string|max:255',
+            'last_name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:6|confirmed',
         ]);
@@ -57,15 +60,64 @@ class RegisterController extends Controller
     /**
      * Create a new user instance after a valid registration.
      *
-     * @param  array  $data
+     * @param  array $data
      * @return \App\User
      */
     protected function create(array $data)
     {
         return User::create([
-            'name' => $data['name'],
+            'first_name' => $data['first_name'],
+            'last_name' => $data['last_name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
         ]);
+    }
+
+    /**
+     *
+     *
+     * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
+
+    protected function register(Request $request)
+    {
+        $input = $request->all();  // holt alle requests
+        $validator = $this->validator($input);  //überprüfen mit validatoren
+
+        if ($validator->passes()) {
+            $data = $this->create($input)->toArray();
+            $data['activation_code'] = str_random(25);  // erstellt random token
+
+            $user = User::find($data['id']);
+            $user->activation_code = $data['activation_code'];
+            $user->save();
+
+            Mail::send('emails.confirmation', $data, function ($message) use ($data) {  // sendet mail
+                $message->to($data['email']);    // empfänger email (this -> user)
+                $message->subject('Bestätigungs Email');  //headline
+            });
+            return redirect(route('login')->with('alert', 'Check inbox'));  // sollte Meldung ausgeben, funktioniert aber noch nicht
+        }
+        return redirect(route('login')->with('status', $validator->errors));
+    }
+
+
+    /**
+     * @param $activation_code
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function confirmation($activation_code)
+    {
+        $user = User::where('activation_code', $activation_code)->first();  // suche den User mit den token
+
+        if(!is_null($user)){
+            $user->is_active = 1;   // überschreibe is_active
+            $user->activation_code = '';   // überschreibe token
+            $user->save();
+            return redirect(route('login'))->with('status', 'Account verifiziert!');
+        }
+        return redirect(route('login'))->with('status', 'Etwas lief schief..');
+
     }
 }

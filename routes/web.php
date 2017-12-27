@@ -27,3 +27,6 @@ Route::get('/faq', function(){
 Route::get('/about', function(){
         return view('about');
 });
+
+Route::get('/users/confirmation/{activation_code}', 'Auth\RegisterController@confirmation')->name('confirmation');
+Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');

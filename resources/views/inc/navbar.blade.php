@@ -33,6 +33,9 @@
                             <a class="dropdown-item" href="#">Messages</a>
                         </div>
                     </div>
+                    <div>
+                <li class="nav-link"><a href="{{ route('logout') }}">Logout</a></li>
+                    </div>
 
                 </li>
                 <li class="nav-link"><a href="{{ url('/home') }}">Home</a></li>
@@ -42,5 +45,4 @@
                 @endauth
                 @endif
             </ul>
-        </div>
     </nav>
