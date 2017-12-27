@@ -16,17 +16,23 @@ Route::get('/', 'CarController@index');
 Auth::routes();
 
 Route::get('/home', 'CarController@index')->name('home');
-Route::get('/faq', 'HomeController@nav')->name('faq');
 
 Route::resource('cars', 'CarController');
 
-Route::get('/faq', function(){
-    return view('faq');
-});
-
-Route::get('/about', function(){
-        return view('about');
-});
+/**
+ * Route for email confirmation
+ * Route for logout
+ */
 
 Route::get('/users/confirmation/{activation_code}', 'Auth\RegisterController@confirmation')->name('confirmation');
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
+
+
+/**
+ * Routes for information
+ */
+Route::get('/faq', 'InfoController@index')->name('faq');
+Route::get('/lendCar', 'InfoController@index1')->name('lendCar');
+Route::get('/rentCar', 'InfoController@index2')->name('rentCar');
+Route::get('/about', 'InfoController@index3')->name('about');
+Route::get('/agb', 'InfoController@index4')->name('agb');

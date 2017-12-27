@@ -3,11 +3,11 @@
     <div class="row">
         <div class="col-4">
             <br>
-            <a class="text-muted" href="#">Auto ausleihen</a><br>
-            <a href="#">Auto verleihen</a><br>
-            <a href="#">FAQ</a><br>
-            <a href="#">About</a><br>
-            <a href="#">AGB</a>
+            <a class="text-muted" href="{{url('/rentCar')}}">Auto ausleihen</a><br>
+            <a href="{{url('/lendCar')}}">Auto verleihen</a><br>
+            <a href="{{route('faq')}}">FAQ</a><br>
+            <a href="{{url('/about')}}">About</a><br>
+            <a href="{{url('/agb')}}">AGB</a>
             <br>
             <br>
         </div>
