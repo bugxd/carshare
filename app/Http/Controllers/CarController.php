@@ -19,6 +19,21 @@ class CarController extends Controller
         return view('cars.index', ['cars' => $cars]);
     }
 
+    public function index1()
+    {
+        return view('cars/create');
+    }
+
+    public function index2()
+    {
+        return view('cars/show');
+    }
+
+    public function index3()
+    {
+        return view('cars/edit');
+    }
+
     /**
      * Show the form for creating a new car
      *

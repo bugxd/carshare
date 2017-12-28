@@ -36,3 +36,11 @@ Route::get('/lendCar', 'InfoController@index1')->name('lendCar');
 Route::get('/rentCar', 'InfoController@index2')->name('rentCar');
 Route::get('/about', 'InfoController@index3')->name('about');
 Route::get('/agb', 'InfoController@index4')->name('agb');
+
+/**
+ * Routes for dropdown
+ */
+Route::get('/create', 'CarController@index1')->name('create');
+Route::get('/show', 'CarController@index2')->name('show');
+Route::get('/edit', 'CarController@index3')->name('edit');
+Route::get('/profil', 'InfoController@index5')->name('profil');

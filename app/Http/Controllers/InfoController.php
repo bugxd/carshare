@@ -31,4 +31,9 @@ class InfoController extends Controller
     {
         return view('infos/agb');
     }
+
+    public function index5()
+    {
+        return view('infos/profil');
+    }
 }

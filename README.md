@@ -56,9 +56,20 @@
 ##terminal commands for models
     php artisan make:model Car
     
+##terminal commands for mail
+    php artisan make:mail Car
+    
 ##termina commands refresh seed
     php artisan migrate:refresh --seed
     
 help with eloquent
     https://scotch.io/tutorials/a-guide-to-using-eloquent-orm-in-laravel
     https://www.youtube.com/watch?v=9ynXDwHK3wI&list=PLnBvgoOXZNCP2LEKmvu2W-eUkO-DYn0TL&index=27
+    
+##change mail sever
+    MAIL_DRIVER=smtp
+    MAIL_HOST=smtp.mailtrap.io
+    MAIL_PORT=2525
+    MAIL_USERNAME=OUR_MAILNAME (carshare24@gmail.com)
+    MAIL_PASSWORD=OUR_PW  (check account)
+    MAIL_ENCRYPTION=null   (tls)

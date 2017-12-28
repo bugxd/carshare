@@ -24,11 +24,13 @@
                 <li class="nav-item">
                     <div class="dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Dropdown
+                            MENÜ
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="{{ url('/home') }}">Home</a>
-                            <a class="dropdown-item" href="{{ url('/inscar') }}">Add a car</a>
+                            <a class="dropdown-item" href="#">Autos in der Nähe..</a>
+                            <a class="dropdown-item" href="{{ route('create') }}">Auto anbieten</a>
+                            <a class="dropdown-item" href="{{ route('show') }}">Deine Autos</a>
+                            <a class="dropdown-item" href="{{ route('profil') }}">Profil</a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="#">Messages</a>
                         </div>
@@ -38,7 +40,6 @@
                     </div>
 
                 </li>
-                <li class="nav-link"><a href="{{ url('/home') }}">Home</a></li>
                 @else
                 <li class="nav-link"><a href="{{ route('login') }}">Login</a></li>
                 <li class="nav-link"><a href="{{ route('register') }}">Register</a></li>
