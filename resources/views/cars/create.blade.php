@@ -10,7 +10,7 @@
 
 
 @section('content')
-<form>
+<form method="post" action="{{ route('cars.create',[Auth::user()]) }}">
     <div class="row">
         <div class="col-md-4 mb-3">
             <label for="validationDefault01">Marke</label>
@@ -87,7 +87,13 @@
     <div class="row">
         <div class="col-md-8 mb-3">
             <label for="validationDefault03">Beschreibung/Austattung</label>
-            <input type="number" class="form-control" id="description" placeholder="Beschreibung oder Austattung" required>
+            <input type="text" class="form-control" id="description" placeholder="Beschreibung oder Austattung" required>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8 mb-3">
+            <label for="validationDefault03">Preis</label>
+            <input type="number" class="form-control" id="description" placeholder="Preis" required>
         </div>
     </div>
 

@@ -64,12 +64,15 @@ class CarController extends Controller
     }
 
     /**
-     * Show the form for editing a new car
+     * Display the form for editing a new car
      *
      * @param Car $car
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function edit(Car $car){
+        $car = Car::find($car->id);
 
+        return view('cars.edit',['car'=>$car]);
     }
 
     /**
@@ -78,7 +81,36 @@ class CarController extends Controller
      * @param Car $car
      */
     public function update(Request $request, Car $car){
+        //save data
+        $carUpdate = Car::where('id',$car->id)->update([
+            'brand' => $request->input('brand'),
+            'car_type' => $request->input('car_type'),
+            'color' => $request->input('color'),
+            'licence_plate' => $request->input('licence_plate'),
+            'nr_of_seats' => $request->input('nr_of_seats'),
+            'weight' => $request->input('weight'),
+            'capacity' => $request->input('capacity'),
+            'power' => $request->input('power'),
+            'design_speed' => $request->input('design_speed'),
+            'payload' => $request->input('payload'),
+            'vertical_load' => $request->input('vertical_load'),
+            'axe_load' => $request->input('axe_load'),
+            'animal_allowed' => $request->get('animal_allowed'),
+            'smoking_allowed' => $request->get('smoking_allowed'),
+            'description' => $request->input('description'),
+            'price' => $request->input('price')
+            //'position' => $request->input('brand'),
+            //'user_id'
 
+        ]);
+
+        if($carUpdate){
+            return redirect()->route('cars.show',['car'=>$car])
+                ->with('success','Car updated successfully!');
+        }
+        //redirect
+        //if fails
+        return back()->withInput();
     }
 
     /**
