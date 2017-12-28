@@ -1,13 +1,15 @@
+
+
 <footer>
-<div class="container-fluid">
+<div class="container">
     <div class="row">
         <div class="col-4">
             <br>
-            <a class="text-muted" href="{{url('/rentCar')}}">Auto ausleihen</a><br>
-            <a href="{{url('/lendCar')}}">Auto verleihen</a><br>
+            <a class="text-muted" href="{{route('rentCar')}}">Auto ausleihen</a><br>
+            <a href="{{route('lendCar')}}">Auto verleihen</a><br>
             <a href="{{route('faq')}}">FAQ</a><br>
-            <a href="{{url('/about')}}">About</a><br>
-            <a href="{{url('/agb')}}">AGB</a>
+            <a href="{{route('about')}}">About</a><br>
+            <a href="{{route('agb')}}">AGB</a>
             <br>
             <br>
         </div>
@@ -20,9 +22,9 @@
         </div>
         <div class="col-4" align="right">
             <br>
-            <a href="#">Facebook</a><br>
-            <a href="#">Instagram</a><br>
-            <a href="#">Twitter</a>
+            <a href="#" class="fa fa-facebook-square">acebook</a><br>
+            <a href="#" class="fa fa-instagram">Instagram</a><br>
+            <a href="#" class="fa fa-twitter">Twitter</a>
             <br>
         </div>
     </div>
