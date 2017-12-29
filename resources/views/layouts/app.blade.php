@@ -27,6 +27,8 @@
 
     <div class="container">
         <br>
+        @include('partials.errors')
+        @include('partials.success')
         @yield('content')
         <br>
     </div>

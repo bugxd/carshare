@@ -80,8 +80,8 @@ class CarController extends Controller
             'payload' => $request->input('payload'),
             'vertical_load' => $request->input('vertical_load'),
             'axe_load' => $request->input('axe_load'),
-            'animal_allowed' => $request->get('animal_allowed'),
-            'smoking_allowed' => $request->get('smoking_allowed'),
+            'animal_allowed' => $request->has('animal_allowed'),
+            'smoking_allowed' => $request->has('smoking_allowed'),
             'description' => $request->input('description'),
             'price' => $request->input('price')
             //'position' => $request->input('brand'),
