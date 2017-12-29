@@ -34,16 +34,9 @@ Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 /**
  * Routes for information
  */
-Route::get('/faq', 'InfoController@index')->name('faq');
-Route::get('/lendCar', 'InfoController@index1')->name('lendCar');
-Route::get('/rentCar', 'InfoController@index2')->name('rentCar');
-Route::get('/about', 'InfoController@index3')->name('about');
-Route::get('/agb', 'InfoController@index4')->name('agb');
-
-/**
- * Routes for dropdown
- */
-Route::get('/create', 'CarController@index1')->name('create');
-Route::get('/show', 'CarController@index2')->name('show');
-Route::get('/edit', 'CarController@index3')->name('edit');
-Route::get('/profil', 'InfoController@index5')->name('profil');
+Route::get('/faq', 'InfoController@showFAQ')->name('faq');
+Route::get('/lendCar', 'InfoController@showLendCar')->name('lendCar');
+Route::get('/rentCar', 'InfoController@showRentCar')->name('rentCar');
+Route::get('/about', 'InfoController@showAbout')->name('about');
+Route::get('/agb', 'InfoController@showAGB')->name('agb');
+Route::get('/profil', 'InfoController@showProfill')->name('profil');

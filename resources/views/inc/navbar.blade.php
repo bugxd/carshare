@@ -28,14 +28,13 @@
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="#">Autos in der Nähe..</a>
-                            <a class="dropdown-item" href="{{ route('create') }}">Auto anbieten</a>
-                            <a class="dropdown-item" href="{{ route('show') }}">Deine Autos</a>
+                            <a class="dropdown-item" href="{{ url('/inscar') }}">Auto anbieten</a>
+                            <a class="dropdown-item" href="#">Deine Autos</a>
                             <a class="dropdown-item" href="{{ route('profil') }}">Profil</a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="#">Messages</a>
                         </div>
-                    </div>
-                    <div>
+                    </div>                    <div>
                 <li class="nav-link"><a href="{{ route('logout') }}">Logout</a></li>
                     </div>
 
