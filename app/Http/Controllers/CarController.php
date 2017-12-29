@@ -101,8 +101,14 @@ class CarController extends Controller
     /**
      * Remove the car from the database
      * @param Car $car
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function destroy(Car $car){
+        $findCar = Car::find($car->id);
+        if($findCar->delete()){
+            return redirect()->route('cars.index')->with('success','Auto gelöscht');
+        }
 
+        return back()->withInput()->wit('error', 'Auto konnte nicht gelöscht werden');
     }
 }

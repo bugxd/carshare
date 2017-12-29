@@ -2,6 +2,6 @@
 
 @section('content')
 
-    @include('cars.index_car')
+    @include('cars.index')
 
 @endsection

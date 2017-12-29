@@ -108,6 +108,29 @@
             </div>
         </div>
 
-        <button class="btn btn-primary" type="submit" value="submit">Änderungen speichern</button>
+        <div class="row">
+            <div class="col-md-4">
+                <button class="btn btn-primary" type="submit" value="submit">Änderungen speichern</button>
+            </div>
+            <!-- here for a delete test -->
+            <div class="col-md-4">
+                <button
+                    class="btn btn-danger"
+                    onclick="
+                        var result = confirm('Willst du das Auto wirklich löschen?');
+                        if(result){
+                            event.preventDefault();
+                            document.getElementById('logout-form').submit();
+                        }
+                    "
+                >Auto löschen</button>
+
+            </div>
+        </div>
+    </form>
+    <!-- here for a delete test -->
+    <form id="logout-form" method="POST" style="display:none;" action="{{ route('cars.destroy',[$car->id]) }}">
+        <input type="hidden" name="_method" value="DELETE">
+        {{ csrf_field() }}
     </form>
 @endsection
