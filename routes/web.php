@@ -42,4 +42,10 @@ Route::get('/lendCar', 'InfoController@showLendCar')->name('lendCar');
 Route::get('/rentCar', 'InfoController@showRentCar')->name('rentCar');
 Route::get('/about', 'InfoController@showAbout')->name('about');
 Route::get('/agb', 'InfoController@showAGB')->name('agb');
-Route::get('/profil', 'InfoController@showProfill')->name('profil');
+Route::get('/profil', 'InfoController@showProfil')->name('profil');
+
+/**
+ * Routes for upload and store UserPics
+ */
+Route::get('upload', 'UploadController@userPicUpload');
+Route::post('storeUserPic', 'UploadController@storeUserPic');
