@@ -17,7 +17,7 @@ class UploadController extends Controller
     {
         if($request->hasFile('image')){
             $request->file('image');
-            return Storage::putFile('userIMG', $request->file('image'));
+            return Storage::putFile('public/userIMG', $request->file('image'));
         } else {
             return 'Kein Bild gewählt';
         }

@@ -30,19 +30,33 @@
                             <a class="dropdown-item" href="#">Autos in der Nähe..</a>
                             <a class="dropdown-item" href="{{ url('/inscar') }}">Auto anbieten</a>
                             <a class="dropdown-item" href="#">Deine Autos</a>
-                            <a class="dropdown-item" href="{{ route('profil') }}">Profil</a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="#">Messages</a>
                         </div>
-                    </div>                    <div>
-                <li class="nav-link"><a href="{{ route('logout') }}">Logout</a></li>
                     </div>
-
                 </li>
+                </ul>
+                    <div class="dropdown" style="margin-right: 25px">
+                        <a href="#" class="dropdown" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
+                            {{ Auth::user()->first_name }} {{ Auth::user()->last_name }} <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a class="dropdown-item" href="{{ route('profil') }}">Profil</a>
+                                <a class="dropdown-item" href="{{ route('logout') }}"
+                                   onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                    Logout
+                                </a>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    {{ csrf_field() }}
+                                </form>
+                            </li>
+                        </ul>
+                    </div>
                 @else
                 <li class="nav-link"><a href="{{ route('login') }}">Login</a></li>
                 <li class="nav-link"><a href="{{ route('register') }}">Register</a></li>
                 @endauth
                 @endif
-            </ul>
     </nav>

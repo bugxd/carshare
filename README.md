@@ -61,6 +61,9 @@
     
 ##termina commands refresh seed
     php artisan migrate:refresh --seed
+
+##terminal commands for link img (storage)
+    php artisan storage:link
     
 help with eloquent
     https://scotch.io/tutorials/a-guide-to-using-eloquent-orm-in-laravel
