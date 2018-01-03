@@ -96,7 +96,6 @@
             <input type="number" class="form-control" id="description" placeholder="Preis" required>
         </div>
     </div>
-
     <div class="row">
         <div class="col-md-6">
             INSERT MAP HERE
@@ -106,3 +105,4 @@
     <button class="btn btn-primary" type="submit">Submit form</button>
 </form>
 @endsection
+

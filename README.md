@@ -76,3 +76,6 @@ help with eloquent
     MAIL_USERNAME=OUR_MAILNAME (carshare24@gmail.com)
     MAIL_PASSWORD=OUR_PW  (check account)
     MAIL_ENCRYPTION=null   (tls)
+    
+##terminal command for dropzone (drag&drop)
+    composer require laravelcollective/html

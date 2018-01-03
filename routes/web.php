@@ -49,3 +49,6 @@ Route::get('/profil', 'InfoController@showProfil')->name('profil');
  */
 Route::get('upload', 'UploadController@userPicUpload');
 Route::post('storeUserPic', 'UploadController@storeUserPic');
+
+Route::get('addCarIMG', 'HomeController@dropzone');
+Route::post('dropzone/store', ['as'=>'dropzone.store','uses'=>'HomeController@dropzoneStore']);
