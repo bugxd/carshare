@@ -52,3 +52,10 @@ Route::post('storeUserPic', 'UploadController@storeUserPic');
 
 Route::get('addCarIMG', 'HomeController@dropzone');
 Route::post('dropzone/store', ['as'=>'dropzone.store','uses'=>'HomeController@dropzoneStore']);
+
+/**
+ * Routes for edit profile
+ */
+Route::post('changePassword', 'ProfileController@changePW');
+Route::post('changeFirstName', 'ProfileController@changeFname');
+Route::post('changeLastName', 'ProfileController@changeLname');
