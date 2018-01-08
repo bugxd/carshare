@@ -225,7 +225,6 @@ Kann ich ein Auto ausleihen, aber ein anderer fährt damit?
     <div class="container"><br>
         <p>Nein, das ist nicht möglich. Gefahren darf das Fahrzeug nur von der Person werden, die das Fahrzeug bucht. Das gilt auch für die Abholung des Fahrzeuges.</p>
     </div>
-</div>
-
+</div><br>
 @endsection
 

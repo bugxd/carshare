@@ -43,7 +43,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.2.0/min/dropzone.min.js"></script>
     <script type="text/javascript">
         Dropzone.options.imageUpload = {
-            maxFilesize         :       8,
+            maxFilesize         :       8,             // gehört noch ausgelagert
             acceptedFiles: ".jpeg,.jpg,.png,.gif"
         };
     </script>

@@ -14,7 +14,7 @@
             </a>
             <div class="collapse" id="collapseFname">
                 <div class="container"> Name ändern </div>
-                <form class="form-horizontal" method="POST" action="changeFirstName">
+                <form class="form-horizontal" method="POST" action="{{ action('ProfileController@changeFname') }}">
                     {{ csrf_field() }}
 
                     <div class="form-group{{ $errors->has('first_name') ? ' has-error' : '' }}">
@@ -48,7 +48,7 @@
             </a>
         <div class="collapse" id="collapseLname">
             <div class="container"> Name ändern </div>
-            <form class="form-horizontal" method="POST" action="changeLastName">
+            <form class="form-horizontal" method="POST" action="{{ action('ProfileController@changeLname') }}">
                 {{ csrf_field() }}
 
                 <div class="form-group{{ $errors->has('last_name') ? ' has-error' : '' }}">
@@ -84,7 +84,7 @@
             </a>
         <div class="collapse" id="collapsePW">
             <div class="container"></div>
-                <form class="form-horizontal" method="POST" action="changePassword">
+                <form class="form-horizontal" method="POST" action="{{ action('ProfileController@changePW') }}">
                     {{ csrf_field() }}
 
                     <div class="form-group{{ $errors->has('passwordold') ? ' has-error' : '' }}">
@@ -137,11 +137,11 @@
         </p>
 
         <h5>Upload Profilbild</h5><br>
-        <form action="storeUserPic" enctype="multipart/form-data" method="post">
+        <form action="{{ action('UploadController@storeUserPic') }}" enctype="multipart/form-data" method="post">
             {{csrf_field()}}
-            <input type="file" name="image" >
+            <input class="small" type="file" name="image" >
             <br><br>
-            <input type="submit" value="Upload"><br>
+            <input class="small" type="submit" value="Upload"><br>
             <br><img src="{{asset('storage/userIMG/TviOUThDA8YU5aKerlagffulqJx8VTZX3Jrm7OtI.jpeg')}}" style="width: 150px; height: 150px" class="rounded-circle" />
         </form>
     </div>

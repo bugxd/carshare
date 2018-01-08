@@ -38,8 +38,8 @@ class InfoController extends Controller
         return view('infos/agb');
     }
 
-    public function showProfil()
+    public function showProfile()
     {
-        return view('infos/profil', array('user' => Auth::user()));
+        return view('infos/profile', array('user' => Auth::user()));
     }
 }
