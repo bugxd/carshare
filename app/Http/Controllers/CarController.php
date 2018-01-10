@@ -109,6 +109,6 @@ class CarController extends Controller
             return redirect()->route('cars.index')->with('success','Auto gelöscht');
         }
 
-        return back()->withInput()->wit('error', 'Auto konnte nicht gelöscht werden');
+        return back()->withInput()->with('error', 'Auto konnte nicht gelöscht werden');
     }
 }
