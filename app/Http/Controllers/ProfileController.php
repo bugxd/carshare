@@ -13,14 +13,21 @@ use Hash;
 class ProfileController extends Controller
 {
 
-    public function showProfile()
+    public function index()
     {
-        return view('infos/profile', array('user' => Auth::user()));
+        $cars = Car::all();
+    }
+
+    public function showProfile(Car $car)
+    {
+
+        $car = Car::find($car ->user_id);
+        return view('infos/profile2', array('user' => Auth::user(), 'cars' => $car ));
     }
 
     public function editProfile()
     {
-        return view('infos/profile2', array('user' => Auth::user()));
+        return view('infos/profile', array('user' => Auth::user()));
     }
 
     public function changeLname()

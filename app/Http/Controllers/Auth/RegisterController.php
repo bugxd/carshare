@@ -97,6 +97,7 @@ class RegisterController extends Controller
                 $message->to($data['email']);    // empfänger email (this -> user)
                 $message->subject('Bestätigungs Email');  //headline
             });
+            return redirect()->route('login')->with('success', 'Check inbox'); // zurückleiten auf route und Meldung ausgeben,
 
         }
         return redirect()->route('login')->with('error', $validator->errors());

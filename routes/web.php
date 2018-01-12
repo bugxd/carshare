@@ -42,7 +42,9 @@ Route::get('/lendCar', 'InfoController@showLendCar')->name('lendCar');
 Route::get('/rentCar', 'InfoController@showRentCar')->name('rentCar');
 Route::get('/about', 'InfoController@showAbout')->name('about');
 Route::get('/agb', 'InfoController@showAGB')->name('agb');
-Route::get('/profile', 'InfoController@showProfile')->name('profile');
+Route::get('/profile', 'ProfileController@editProfile')->name('profile');
+Route::get('/profile2', 'ProfileController@showProfile')->name('profile2');
+
 
 /**
  * Routes for upload and store UserPics
