@@ -5,12 +5,14 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Storage;
+use Image;
+use Auth;
 
 class UploadController extends Controller
 {
     public function userPicUpload()
     {
-        return view('infos.profil');
+        return view('infos.profile');
     }
 
     public function storeUserPic(Request $request)

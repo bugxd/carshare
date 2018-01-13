@@ -50,7 +50,7 @@ Route::get('/profile2', 'ProfileController@showProfile')->name('profile2');
  * Routes for upload and store UserPics
  */
 Route::get('upload', 'UploadController@userPicUpload');
-Route::post('storeUserPic', 'UploadController@storeUserPic');
+Route::post('updateAvatar', 'UploadController@updateAvatar');
 
 Route::get('addCarIMG', 'HomeController@dropzone');
 Route::post('dropzone/store', ['as'=>'dropzone.store','uses'=>'HomeController@dropzoneStore']);

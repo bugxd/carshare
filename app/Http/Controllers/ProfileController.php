@@ -15,14 +15,12 @@ class ProfileController extends Controller
 
     public function index()
     {
-        $cars = Car::all();
+
     }
 
-    public function showProfile(Car $car)
+    public function showProfile()
     {
-
-        $car = Car::find($car ->user_id);
-        return view('infos/profile2', array('user' => Auth::user(), 'cars' => $car ));
+        return view('infos/profile2', array('user' => Auth::user()));
     }
 
     public function editProfile()

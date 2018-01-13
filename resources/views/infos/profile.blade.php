@@ -7,7 +7,6 @@
         <br>
         <h5>Vorname:</h5>
         <p>{{ $user->first_name }} &emsp;&emsp;
-
             Bearbeiten:
             <a class="dropdown-toggle" role="button" data-toggle="collapse" href="#collapseFname" aria-expanded="false" aria-controls="collapseExp">
 
@@ -76,7 +75,6 @@
         <p>{{ $user->email }}</p>
 
         <h5>Passwort:</h5>
-        <p>{{ $user->password }} </p>
         <p>
             Bearbeiten:
             <a class="dropdown-toggle" role="button" data-toggle="collapse" href="#collapsePW" aria-expanded="false" aria-controls="collapseExp">
@@ -133,16 +131,21 @@
     </div>
 </div><br>
 
-    <div class="container">
-        </p>
+<div class="container">
+    </p>
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+            <img src="storage/userIMG/{{ $user->avatar }}" style="border-radius: 50%; margin-right: 25px; float:left; width: 150px; height: 150px" class="rounded-circle" />
 
-        <h5>Upload Profilbild</h5><br>
-        <form action="{{ action('UploadController@storeUserPic') }}" enctype="multipart/form-data" method="post">
-            {{csrf_field()}}
-            <input class="small" type="file" name="image" >
-            <br><br>
-            <input class="small" type="submit" value="Upload"><br>
-            <br><img src="{{asset('storage/userIMG/TviOUThDA8YU5aKerlagffulqJx8VTZX3Jrm7OtI.jpeg')}}" style="width: 150px; height: 150px" class="rounded-circle" />
-        </form>
+            <h5>Upload Profilbild</h5><br>
+            <form action="{{ action('UploadController@updateAvatar') }}" enctype="multipart/form-data" method="post">
+                {{csrf_field()}}
+                <input class="small" type="file" name="avatar" >
+                <br><br>
+                <input class="small" type="submit" value="Upload"><br>
+                <br>
+            </form>
+        </div>
     </div>
+</div>
 @endsection
