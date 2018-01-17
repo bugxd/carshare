@@ -59,3 +59,12 @@ Route::post('dropzone/store', ['as'=>'dropzone.store','uses'=>'HomeController@dr
 Route::post('changePassword', 'ProfileController@changePW');
 Route::post('changeFirstName', 'ProfileController@changeFname');
 Route::post('changeLastName', 'ProfileController@changeLname');
+
+/**
+ * Routes for messages
+ */
+Route::get('messages', 'MessageController@showMessages')->name('messages');
+Route::get('writeMessage/{carUser_id}', 'MessageController@writeMessage')->name('writeMessage');
+Route::post('createMessage/{carUser}', 'MessageController@create')->name('createMessage');
+
+

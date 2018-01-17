@@ -28,6 +28,7 @@
                     <a class="list-group-item list-group-item-action" href="#list-item-2">Location</a>
                     <a class="list-group-item list-group-item-action" href="#list-item-3">Price</a>
                     <a class="list-group-item list-group-item-action" href="#list-item-4">Rent</a>
+                    <a class="list-group-item list-group-item-action" href="#list-item-5">Contact</a>
                 </div>
                 <form data-spy="scroll" data-target="#list-example" data-offset="0" class="scrollspy-example">
                     <h4 id="list-item-1">CarData</h4>
@@ -88,6 +89,9 @@
 
                     <h4 id="list-item-4">Rent</h4>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    
+                    <h4 id="list-item-5">Contact</h4>
+                    <p><a href="{{ route('writeMessage', ['carUser_id'=>$car->user_id]) }}">Contact me</a></p>
                 </form>
             </form>
         </div>
