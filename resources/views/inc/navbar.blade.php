@@ -31,7 +31,7 @@
                             <a class="dropdown-item" href="{{ url('/create') }}">Auto anbieten</a>
                             <a class="dropdown-item" href="#">Deine Autos</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Messages</a>
+                            <a class="dropdown-item" href="{{ route('messages') }}">Messages</a>
                         </div>
                     </div>
                 </li>
