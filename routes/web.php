@@ -42,16 +42,18 @@ Route::get('/lendCar', 'InfoController@showLendCar')->name('lendCar');
 Route::get('/rentCar', 'InfoController@showRentCar')->name('rentCar');
 Route::get('/about', 'InfoController@showAbout')->name('about');
 Route::get('/agb', 'InfoController@showAGB')->name('agb');
-Route::get('/profile', 'InfoController@showProfile')->name('profile');
+Route::get('/profile', 'ProfileController@editProfile')->name('profile');
+Route::get('/profile2', 'ProfileController@showProfile')->name('profile2');
+
 
 /**
  * Routes for upload and store UserPics
  */
 Route::get('upload', 'UploadController@userPicUpload');
-Route::post('storeUserPic', 'UploadController@storeUserPic');
+Route::post('updateAvatar', 'UploadController@updateAvatar');
 
 Route::get('addCarIMG', 'HomeController@dropzone');
-Route::post('dropzone/store', ['as'=>'dropzone.store','uses'=>'HomeController@dropzoneStore']);
+Route::post('updateCarIMG', ['as'=>'dropzone.store','uses'=>'UploadController@updateCarIMG']);
 
 /**
  * Routes for edit profile

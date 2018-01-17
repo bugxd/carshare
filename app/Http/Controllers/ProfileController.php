@@ -6,11 +6,28 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Input as input;
 use App\User;
+use App\Car;
 use Auth;
 use Hash;
 
 class ProfileController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+    public function showProfile()
+    {
+        return view('infos/profile2', array('user' => Auth::user()));
+    }
+
+    public function editProfile()
+    {
+        return view('infos/profile', array('user' => Auth::user()));
+    }
+
     public function changeLname()
     {
 

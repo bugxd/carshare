@@ -37,9 +37,4 @@ class InfoController extends Controller
     {
         return view('infos/agb');
     }
-
-    public function showProfile()
-    {
-        return view('infos/profile', array('user' => Auth::user()));
-    }
 }

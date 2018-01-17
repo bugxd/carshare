@@ -97,9 +97,10 @@ class RegisterController extends Controller
                 $message->to($data['email']);    // empfänger email (this -> user)
                 $message->subject('Bestätigungs Email');  //headline
             });
-            return redirect(route('login')->with('alert', 'Check inbox'));  // sollte Meldung ausgeben, funktioniert aber noch nicht
+            return redirect()->route('login')->with('success', 'Check inbox'); // zurückleiten auf route und Meldung ausgeben,
+
         }
-        return redirect(route('login')->with('status', $validator->errors));
+        return redirect()->route('login')->with('error', $validator->errors());
     }
 
 
@@ -115,9 +116,9 @@ class RegisterController extends Controller
             $user->is_active = 1;   // überschreibe is_active
             $user->activation_code = '';   // überschreibe token
             $user->save();
-            return redirect(route('login'))->with('status', 'Account verifiziert!');
+            return redirect()->route('login')->with('success', 'Account verifiziert!');
         }
-        return redirect(route('login'))->with('status', 'Etwas lief schief..');
+        return redirect()->route('login')->with('error', 'Etwas lief schief..');
 
     }
 }
