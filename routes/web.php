@@ -42,8 +42,8 @@ Route::get('/lendCar', 'InfoController@showLendCar')->name('lendCar');
 Route::get('/rentCar', 'InfoController@showRentCar')->name('rentCar');
 Route::get('/about', 'InfoController@showAbout')->name('about');
 Route::get('/agb', 'InfoController@showAGB')->name('agb');
-Route::get('/profile', 'ProfileController@editProfile')->name('profile');
-Route::get('/profile2', 'ProfileController@showProfile')->name('profile2');
+Route::get('/profileEdit', 'ProfileController@editProfile')->name('profileEdit');
+Route::get('/profile', 'ProfileController@showProfile')->name('profile');
 
 
 /**

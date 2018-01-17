@@ -37,18 +37,4 @@ class HomeController extends Controller
         return view('cars/addCarIMG');
     }
 
-    /**
-     * Image Upload Code
-     *
-     * @return void
-     */
-    public function dropzoneStore(Request $request)
-    {
-        $image = $request->file('file');
-        $imageName = time().$image->getClientOriginalName();
-
-        $image->move(public_path('storage/carIMG'),$imageName);
-
-        return response()->json(['success'=>$imageName]);
-    }
 }

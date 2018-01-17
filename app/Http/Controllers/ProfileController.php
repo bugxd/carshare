@@ -12,22 +12,38 @@ use Hash;
 
 class ProfileController extends Controller
 {
-
+    /**
+     * middleware auth so that only logged Users can view your profile
+     * ProfileController constructor.
+     */
     public function __construct()
     {
         $this->middleware('auth');
     }
 
+    /**
+     * show User Profile
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     *
+     */
     public function showProfile()
-    {
-        return view('infos/profile2', array('user' => Auth::user()));
-    }
-
-    public function editProfile()
     {
         return view('infos/profile', array('user' => Auth::user()));
     }
 
+    /**
+     * Edit User Profile
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function editProfile()
+    {
+        return view('infos/profileEdit', array('user' => Auth::user()));
+    }
+
+    /**
+     * Change the Lastname from User
+     * @return \Illuminate\Http\RedirectResponse|string
+     */
     public function changeLname()
     {
 
@@ -43,6 +59,10 @@ class ProfileController extends Controller
         return "not working";
     }
 
+    /**
+     * Change the firstname from User
+     * @return \Illuminate\Http\RedirectResponse|string
+     */
     public function changeFname()
     {
 
@@ -58,6 +78,10 @@ class ProfileController extends Controller
         return "not working";
     }
 
+    /**
+     * Function to change User Password
+     * @return \Illuminate\Http\RedirectResponse|string
+     */
     public function changePW()
     {
 

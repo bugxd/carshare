@@ -12,16 +12,28 @@ use App\Picture;
 
 class UploadController extends Controller
 {
+    /**
+     * middleware auth so that only logged Users can upload images
+     * UploadController constructor.
+     */
     public function __construct()
     {
         $this->middleware('auth');
     }
 
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function userPicUpload()
     {
         return view('infos.profile');
     }
 
+    /**
+     * Function to change avatar pic from User
+     * @param Request $request
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function updateAvatar(Request $request)
     {
         $this->validate($request, [
@@ -41,12 +53,16 @@ class UploadController extends Controller
 
     }
 
+    /**
+     * Function to upload Car Pic with dropzone (D&D)
+     * @param Request $request
+     */
     public function updateCarIMG(Request $request)
     {
 
         $user = Auth::user();
         $image = $request->file('file');
-        $filename = "car_$user->id.".$image->getClientOriginalName();
+        $filename = "car_$user->id.".$image->getClientOriginalExtension();
 
         Image::make($image)->resize(400,400)->save(public_path('/storage/carIMG/' .$filename));
 
