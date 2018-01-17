@@ -54,7 +54,9 @@ class CarShareSeeder extends Seeder{
             'smoking_allowed' => true,
             'description' => 'Aller super tollstes Auto !',
             'price' => 123,
-            'position' =>  DB::raw("(GeomFromText('POINT(37.774929 -122.419415)'))"),
+            'available_from' => date('Y-m-d'),
+            'available_to' => date('Y-m-d'),
+            //'position' =>  DB::raw("(GeomFromText('POINT(37.774929 -122.419415)'))"),
             'user_id' => 1
         ));
 
@@ -75,7 +77,9 @@ class CarShareSeeder extends Seeder{
             'smoking_allowed' => true,
             'description' => 'Zweit super tollstes Auto !',
             'price' => 123,
-            'position' =>  DB::raw("(GeomFromText('POINT(37.774929 -122.419415)'))"),
+            'available_from' => date('Y-m-d'),
+            'available_to' => date('Y-m-d'),
+            //'position' =>  DB::raw("(GeomFromText('POINT(37.774929 -122.419415)'))"),
             'user_id' => 1
         ));
 
@@ -96,7 +100,9 @@ class CarShareSeeder extends Seeder{
             'smoking_allowed' => true,
             'description' => 'Dritt super tollstes Auto !',
             'price' => 123,
-            'position' =>  DB::raw("(GeomFromText('POINT(37.774929 -122.419415)'))"),
+            'available_from' => date('Y-m-d'),
+            'available_to' => date('Y-m-d'),
+            //'position' =>  DB::raw("(GeomFromText('POINT(37.774929 -122.419415)'))"),
             'user_id' => 1
         ));
 
@@ -117,7 +123,9 @@ class CarShareSeeder extends Seeder{
             'smoking_allowed' => true,
             'description' => 'Aller super tollstes Auto !',
             'price' => 123,
-            'position' =>  DB::raw("(GeomFromText('POINT(37.774929 -122.419415)'))"),
+            'available_from' => date('Y-m-d'),
+            'available_to' => date('Y-m-d'),
+            //'position' =>  DB::raw("(GeomFromText('POINT(37.774929 -122.419415)'))"),
             'user_id' => 1
         ));
     }

@@ -10,6 +10,7 @@
         </div>
     </div>
     <br><h3>Deine Autos</h3>
+    <a href="cars/create" class="btn btn-primary"><span class="badge badge-secondary">+</span>Neues Auto Anlege</a>
 </div>
 
 @endsection

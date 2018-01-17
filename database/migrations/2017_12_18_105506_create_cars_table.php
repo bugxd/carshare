@@ -8,7 +8,7 @@ class CreateCarsTable extends Migration
 {
     /**
      * Run the migrations.
-     *
+     * create a cars table
      * @return void
      */
     public function up()
@@ -33,7 +33,9 @@ class CreateCarsTable extends Migration
             $table->boolean('smoking_allowed'); //yes no
             $table->text('description'); //additional user infromation
             $table->integer('price'); //per day in Euro
-            $table->geometry('position'); //hopefully
+            $table->date('available_from'); // verfügbar von
+            $table->date('available_to'); // verfügbar bis
+            //$table->geometry('position'); //hopefully
             //belongs to user
             $table->integer('user_id');
             $table->timestamps();
