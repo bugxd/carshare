@@ -28,7 +28,8 @@ class ProfileController extends Controller
      */
     public function showProfile()
     {
-        return view('infos/profile', array('user' => Auth::user()));
+        $cars = Car::where('user_id', Auth::user()->id)->get();
+        return view('infos/profile')->with('cars', $cars);
     }
 
     /**
