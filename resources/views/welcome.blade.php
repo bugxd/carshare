@@ -49,13 +49,13 @@
                     ' <div class="card" style="width: 20rem;">' +
                     '    <img class="card-img-top" src="img/car1.jpg" alt="Card image car1">' +
                     '    <div class="card-body">' +
-                    '      <h4 class="card-title">{{ $car->brand }} {{ $car->type }}</h4>' +
+                    '      <h4 class="card-title">{{ $car->brand }} {{ $car->car_type }}</h4>' +
                     '      <ul class="list-group">' +
                     '        <li class="list-group-item justify-content-between">' +
-                    '          {{ $car->description }}' +
+                    '          Verfügbar von: <span class="badge badge-secondary">{{ $car->available_from }}</span> bis: <span class="badge badge-secondary">{{ $car->available_to }}</span>' +
                     '        </li>' +
                     '        <li class="list-group-item justify-content-between">' +
-                    '          {{ $car->price }}' +
+                    '           Preis: <span class="badge badge-secondary">{{ $car->price }}€</span> pro Tag' +
                     '        </li>' +
                     '      </ul>' +
                     '      <a href="cars/{{ $car->id }}" class="btn btn-primary">Details</a>' +
