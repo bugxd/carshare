@@ -6,9 +6,58 @@
 @endsection
 
 @section('style')
-    body {
-    position: relative;
+    #map{
+    height: 300px;
+    with: auto;
     }
+@endsection
+
+@section('callback_script')
+    <script>
+        // Note: This example requires that you consent to location sharing when
+        // prompted by your browser. If you see the error "The Geolocation service
+        // failed.", it means you probably did not give permission for the browser to
+        // locate you.
+
+        function initMap() {
+            var map = new google.maps.Map(document.getElementById('map'), {
+                center: {lat: -34.397, lng: 150.644},
+                zoom: 16
+            });
+            var infoWindow = new google.maps.InfoWindow({map: map});
+
+            // Try HTML5 geolocation.
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(function(position) {
+                    var pos = {
+                        lat: {{ $car->lat }},
+                        lng: {{ $car->lng }}
+                    };
+
+                    map.setCenter(pos);
+
+                    var marker = new google.maps.Marker({
+                        position: pos,
+                        map: map,
+                        draggable: true,
+                        title: 'Auto Position'
+                    });
+                }, function() {
+                    handleLocationError(true, infoWindow, map.getCenter());
+                });
+            } else {
+                // Browser doesn't support Geolocation
+                handleLocationError(false, infoWindow, map.getCenter());
+            }
+        }
+
+        function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+            infoWindow.setPosition(pos);
+            infoWindow.setContent(browserHasGeolocation ?
+                'Error: The Geolocation service failed.' :
+                'Error: Your browser doesn\'t support geolocation.');
+        }
+    </script>
 @endsection
 
 
@@ -82,7 +131,13 @@
                     </div>
 
                     <h4 id="list-item-2">Location</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <div class="row">
+                        <div class="col-md-8">
+                            <label>Position des Autos</label>
+                            <div id="map"></div>
+                        </div>
+                    </div>
+
                     <h4 id="list-item-3">Price</h4>
 
                     {{ $car->price }}

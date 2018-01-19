@@ -56,7 +56,8 @@ class CarShareSeeder extends Seeder{
             'price' => 123,
             'available_from' => date('Y-m-d'),
             'available_to' => date('Y-m-d'),
-            //'position' =>  DB::raw("(GeomFromText('POINT(37.774929 -122.419415)'))"),
+            'lat' => 46.60592551179541,
+            'lng' => 13.816552135937513,
             'user_id' => 1
         ));
 
@@ -79,7 +80,8 @@ class CarShareSeeder extends Seeder{
             'price' => 123,
             'available_from' => date('Y-m-d'),
             'available_to' => date('Y-m-d'),
-            //'position' =>  DB::raw("(GeomFromText('POINT(37.774929 -122.419415)'))"),
+            'lat' => 46.60592551179541,
+            'lng' => 13.827474091046156,
             'user_id' => 1
         ));
 
@@ -102,7 +104,8 @@ class CarShareSeeder extends Seeder{
             'price' => 123,
             'available_from' => date('Y-m-d'),
             'available_to' => date('Y-m-d'),
-            //'position' =>  DB::raw("(GeomFromText('POINT(37.774929 -122.419415)'))"),
+            'lat' => 46.604849358023095,
+            'lng' => 13.816552135937513,
             'user_id' => 1
         ));
 
@@ -125,7 +128,8 @@ class CarShareSeeder extends Seeder{
             'price' => 123,
             'available_from' => date('Y-m-d'),
             'available_to' => date('Y-m-d'),
-            //'position' =>  DB::raw("(GeomFromText('POINT(37.774929 -122.419415)'))"),
+            'lat' => 46.604849358023095,
+            'lng' => 13.827474091046156,
             'user_id' => 1
         ));
     }

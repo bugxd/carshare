@@ -85,4 +85,4 @@ help with eloquent
     composer require laravelcollective/html
     
 ## google maps api
-    key : AIzaSyCB8-fiCydxoY__a_1FAz2zcxb8aFWFNRI
+    https://developers.google.com/maps/documentation/javascript/

@@ -35,7 +35,8 @@ class CreateCarsTable extends Migration
             $table->integer('price'); //per day in Euro
             $table->date('available_from'); // verfügbar von
             $table->date('available_to'); // verfügbar bis
-            //$table->geometry('position'); //hopefully
+            $table->double('lat',17,14); //latitude length total 17 decimal 14
+            $table->double('lng',17,14); //longitude length total 17 decimal 14
             //belongs to user
             $table->integer('user_id');
             $table->timestamps();

@@ -16,9 +16,71 @@
 @endsection
 
 @section('style')
-
+    #map{
+        height: 300px;
+        with: auto;
+    }
 @endsection
 
+@section('callback_script')
+    <script>
+        // Note: This example requires that you consent to location sharing when
+        // prompted by your browser. If you see the error "The Geolocation service
+        // failed.", it means you probably did not give permission for the browser to
+        // locate you.
+
+        function initMap() {
+            var map = new google.maps.Map(document.getElementById('map'), {
+                center: {lat: -34.397, lng: 150.644},
+                zoom: 16
+            });
+            var infoWindow = new google.maps.InfoWindow({map: map});
+
+            // Try HTML5 geolocation.
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(function(position) {
+                    var pos = {
+                        lat: position.coords.latitude,
+                        lng: position.coords.longitude
+                    };
+
+                    map.setCenter(pos);
+
+                    var marker = new google.maps.Marker({
+                        position: pos,
+                        map: map,
+                        draggable: true,
+                        title: 'Aktuelle Position'
+                    });
+                    marker.addListener('click', function() {
+                        infowindow.open(map, marker);
+                    });
+                    marker.addListener('drag', function() {
+
+                        document.getElementById('lat').setAttribute('value',marker.getPosition().lat());
+                        document.getElementById('lng').setAttribute('value',marker.getPosition().lng());
+                    });
+
+                    //set initial position to labels
+                    document.getElementById('lat').setAttribute('value',marker.getPosition().lat());
+                    document.getElementById('lng').setAttribute('value',marker.getPosition().lng());
+                }, function() {
+                    handleLocationError(true, infoWindow, map.getCenter());
+                });
+            } else {
+                // Browser doesn't support Geolocation
+                handleLocationError(false, infoWindow, map.getCenter());
+            }
+        }
+
+        function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+            infoWindow.setPosition(pos);
+            infoWindow.setContent(browserHasGeolocation ?
+                'Error: The Geolocation service failed.' :
+                'Error: Your browser doesn\'t support geolocation.');
+        }
+    </script>
+@endsection
 
 @section('content')
     <form method="post" action="{{ route('cars.store') }}">
@@ -113,18 +175,24 @@
                 <label for="validationAvailableTo">Verfügbar bis</label>
                 <input type="text" class="form-control" id="car-available-to" name="available_to" placeholder="Y-m-d" required>
             </div>
-            <div class="col-md-3">
-
-            </div>
             <div class="col-md-2 mb-3">
-                <label for="validationDefault03">Preis</label>
+                <label for="validationDefault03">Preis (pro Tag)</label>
                 <input type="text" class="form-control" id="car-price" name="price" placeholder="Preis" required>
             </div>
         </div>
 
         <div class="row">
-            <div class="col-md-6">
-                INSERT POSITION HERE
+            <div class="col-md-8">
+                <label>Position des Autos</label>
+                <div id="map"></div>
+            </div>
+        </div>
+        <div id="row">
+            <div id="col-md-3">
+                <input id="lat" name="lat" type="hidden"  pattern="[0-9]+([\.][0-9]+)?" step="any"/>
+            </div>
+            <div id="col-md-3">
+                <input id="lng" name="lng" type="hidden"  pattern="[0-9]+([\.][0-9]+)?" step="any"/>
             </div>
         </div>
 

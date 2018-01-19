@@ -55,7 +55,8 @@ class CarController extends Controller
                 'price' => $request->input('price'),
                 'available_from' => $request->input('available_from'),
                 'available_to' => $request->input('available_to'),
-                //'position' =>  new Point(40.7484404, -73.9878441),
+                'lat' => str_replace(',','.',$request->input('lat')),
+                'lng' => str_replace(',','.',$request->input('lng')),
                 'user_id' => Auth::user()->id
             ]);
 
@@ -95,6 +96,7 @@ class CarController extends Controller
      * Updated the spiecified car in database
      * @param Request $request
      * @param Car $car
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function update(Request $request, Car $car){
         //save data
@@ -114,10 +116,9 @@ class CarController extends Controller
             'animal_allowed' => $request->has('animal_allowed'),
             'smoking_allowed' => $request->has('smoking_allowed'),
             'description' => $request->input('description'),
-            'price' => $request->input('price')
-            //'position' => $request->input('brand'),
-            //'user_id'
-
+            'price' => $request->input('price'),
+            'lat' => str_replace(',','.',$request->input('lat')),
+            'lng' => str_replace(',','.',$request->input('lng')),
         ]);
 
         if($carUpdate){
