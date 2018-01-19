@@ -26,9 +26,24 @@
                                 {{ $car->price }}
                             </li>
                         </ul>
-                        <a href="cars/{{ $car->id }}" class="btn btn-primary">Rent</a>
+                        <a href="cars/{{ $car->id }}/edit" class="btn btn-primary">Bearbeiten</a>
+
+                        <button
+                                class="btn btn-danger"
+                                onclick="
+                                    var result = confirm('Willst du das Auto wirklich löschen?');
+                                    if(result){
+                                        event.preventDefault();
+                                        document.getElementById('logout-form').submit();
+                                    }"
+                        >Löschen</button>
                     </div>
                 </div>
+                <!-- here for a delete test -->
+                <form id="logout-form" method="POST" style="display:none;" action="{{ route('cars.destroy',[$car->id]) }}">
+                    <input type="hidden" name="_method" value="DELETE">
+                    {{ csrf_field() }}
+                </form>
             @endforeach
         </div>
     </div>

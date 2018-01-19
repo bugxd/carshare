@@ -18,7 +18,7 @@ Route::get('/', 'HomeController@index');
 
 Auth::routes();
 
-Route::get('/home', 'CarController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('home');
 
 /**
  * add routes to crud cars

@@ -46,30 +46,33 @@
 
             @foreach($cars as $car)
                 var contentString=
-                ' <div class="card" style="width: 20rem;">' +
-                '    <img class="card-img-top" src="img/car1.jpg" alt="Card image car1">' +
-                '    <div class="card-body">' +
-                '      <h4 class="card-title">{{ $car->brand }} {{ $car->type }}</h4>' +
-                '      <ul class="list-group">' +
-                '        <li class="list-group-item justify-content-between">' +
-                '          {{ $car->description }}' +
-                '        </li>' +
-                '        <li class="list-group-item justify-content-between">' +
-                '          {{ $car->price }}' +
-                '        </li>' +
-                '      </ul>' +
-                '      <a href="cars/{{ $car->id }}" class="btn btn-primary">Rent</a>\n' +
-                '    </div>' +
-                '  </div> '
+                    ' <div class="card" style="width: 20rem;">' +
+                    '    <img class="card-img-top" src="img/car1.jpg" alt="Card image car1">' +
+                    '    <div class="card-body">' +
+                    '      <h4 class="card-title">{{ $car->brand }} {{ $car->type }}</h4>' +
+                    '      <ul class="list-group">' +
+                    '        <li class="list-group-item justify-content-between">' +
+                    '          {{ $car->description }}' +
+                    '        </li>' +
+                    '        <li class="list-group-item justify-content-between">' +
+                    '          {{ $car->price }}' +
+                    '        </li>' +
+                    '      </ul>' +
+                    '      <a href="cars/{{ $car->id }}" class="btn btn-primary">Details</a>' +
+                    '    </div>' +
+                    '  </div> ';
+
                 var infowindow{{ $car->id }} = new google.maps.InfoWindow({
                     content: contentString
                 });
+
                 var marker{{ $car->id }} = new google.maps.Marker({
                     position: {lat: {{ $car->lat }}, lng: {{ $car->lng }} },
                     map: map,
                     title: 'a Position'
                 });
-                marker.addListener('click', function() {
+
+                marker{{ $car->id }}.addListener('click', function() {
                     infowindow{{ $car->id }}.open(map, marker{{ $car->id }});
                 });
             @endforeach

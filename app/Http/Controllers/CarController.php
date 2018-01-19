@@ -136,11 +136,13 @@ class CarController extends Controller
      * @return \Illuminate\Http\RedirectResponse
      */
     public function destroy(Car $car){
-        $findCar = Car::find($car->id);
-        if($findCar->delete()){
-            return redirect()->route('cars.index')->with('success','Auto gelöscht');
-        }
+        if(Auth::check()) {
+            $findCar = Car::find($car->id);
+            if ($findCar->delete()) {
+                return redirect()->route('profile')->with('success', 'Auto gelöscht');
+            }
 
-        return back()->withInput()->with('error', 'Auto konnte nicht gelöscht werden');
+            return back()->withInput()->with('error', 'Auto konnte nicht gelöscht werden');
+        }
     }
 }

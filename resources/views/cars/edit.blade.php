@@ -184,20 +184,7 @@
             <div class="col-md-4">
                 <button class="btn btn-primary" type="submit" value="submit">Änderungen speichern</button>
             </div>
-            <!-- here for a delete test -->
-            <div class="col-md-4">
-                <button
-                    class="btn btn-danger"
-                    onclick="
-                        var result = confirm('Willst du das Auto wirklich löschen?');
-                        if(result){
-                            event.preventDefault();
-                            document.getElementById('logout-form').submit();
-                        }
-                    "
-                >Auto löschen</button>
 
-            </div>
             <div class="col-md-4">
                 <a class="btn btn-primary" href="{{url('addCarIMG')}}">Bilder Hochladen</a>
             </div>
