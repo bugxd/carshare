@@ -39,7 +39,6 @@
                     var marker = new google.maps.Marker({
                         position: pos,
                         map: map,
-                        draggable: true,
                         title: 'Auto Position'
                     });
                 }, function() {
@@ -63,7 +62,7 @@
 
 @section('content')
     <div class="row">
-        <form class="col-md-8 col-md-offset-2">
+        <form class="col-md-12 col-md-offset-2">
             <div class="card">
                 <img class="card-img-top" src="/carshare/public/img/car1.jpg" alt="Card image car1">
                 <div class="card-body">

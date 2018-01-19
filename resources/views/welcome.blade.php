@@ -21,7 +21,7 @@
         function initMap() {
             var map = new google.maps.Map(document.getElementById('map'), {
                 center: {lat: -34.397, lng: 150.644},
-                zoom: 16
+                zoom: 14
             });
             var infoWindow = new google.maps.InfoWindow({map: map});
 
@@ -88,7 +88,9 @@
     </script>
 @endsection
 @section('content')
-
+    <div id="row">
+        <h1 class="h1">Autos in der Nähe</h1>
+    </div>
     <div id="row">
         <div id="map"></div>
     </div>
