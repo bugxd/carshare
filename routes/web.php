@@ -14,7 +14,7 @@ Route::get('/welcome2', function(){
     return view('/welcome2');
 });
 
-Route::get('/', 'CarController@index');
+Route::get('/', 'HomeController@index');
 
 Auth::routes();
 

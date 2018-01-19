@@ -83,3 +83,6 @@ help with eloquent
     
 ##terminal command for dropzone (drag&drop)
     composer require laravelcollective/html
+    
+## google maps api
+    key : AIzaSyCB8-fiCydxoY__a_1FAz2zcxb8aFWFNRI
