@@ -170,6 +170,7 @@
                     <h4 id="list-item-5">Contact</h4>
                     <p><a href="{{ route('writeMessage', ['carUser_id'=>$car->user_id]) }}">Contact me</a></p>
                 </form>
+                <button class="btn btn-primary" type="submit" value="submit">Rent</button>
             </form>
         </div>
     </div>
