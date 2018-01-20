@@ -45,18 +45,19 @@
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+
+    <!-- Image upload -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.2.0/min/dropzone.min.js"></script>
-
-    <!--Google Maps -->
-    @yield('callback_script')
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCB8-fiCydxoY__a_1FAz2zcxb8aFWFNRI&callback=initMap"></script>
-
     <script type="text/javascript">
         Dropzone.options.imageUpload = {
             maxFilesize         :       8,             // gehört noch ausgelagert
             acceptedFiles: ".jpeg,.jpg,.png,.gif"
         };
     </script>
+
+    <!--Google Maps -->
+    @yield('callback_script')
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCB8-fiCydxoY__a_1FAz2zcxb8aFWFNRI&callback=initMap"></script>
     <script>
         @yield('script')
     </script>

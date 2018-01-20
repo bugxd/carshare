@@ -1,7 +1,10 @@
 @extends('layouts.app')
 
 @section('script')
-    $('body').scrollspy({ target: '#navbar-example' })
+    $('document').ready(function(){
+        $('body').scrollspy({ target: '#navbar-example' })
+        $('.carousel').carousel()
+    });
 
 @endsection
 
@@ -63,12 +66,32 @@
 @section('content')
     <div class="row">
         <form class="col-md-12 col-md-offset-2">
-            <div class="card">
-                <img class="card-img-top" src="/carshare/public/img/car1.jpg" alt="Card image car1">
-                <div class="card-body">
-                    <h4 class="card-title">{{ $car->brand }} {{$car->car_type}}</h4>
-                    <p class="card-text">{{ $car->description }}</p>
+            <div id="carouselExampleControls" class="carousel slide card-img-top" data-ride="carousel" >
+                <div class="carousel-inner" style="height: 500px;">
+                    @foreach($pictures as $picture)
+                        @if ($loop->first)
+                            <div class="carousel-item active">
+                                <img class="d-block w-100" src="{{ asset('storage/carIMG/'.$picture->imgName) }}"  alt="{{ $picture->imgName }}" style="height: 500px;">
+                            </div>
+                        @else
+                            <div class="carousel-item">
+                                <img class="d-block w-100" src="{{ asset('storage/carIMG/'.$picture->imgName) }}" alt="{{ $picture->imgName }}" style="height: 500px;">
+                            </div>
+                        @endif
+                    @endforeach
                 </div>
+                <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+            <div class="card-body">
+                <h4 class="card-title">{{ $car->brand }} {{$car->car_type}}</h4>
+                <p class="card-text">{{ $car->description }}</p>
             </div>
             <form id="navbar-example">
                 <div id="list-example" class="list-group">

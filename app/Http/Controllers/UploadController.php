@@ -26,7 +26,7 @@ class UploadController extends Controller
      */
     public function userPicUpload()
     {
-        return view('infos.profile');
+        return redirect()->route('/profile', 'ProfileController@showProfile');
     }
 
     /**
@@ -49,7 +49,8 @@ class UploadController extends Controller
             $user->save();
 
         }
-        return view('infos/profile', array('user' => Auth::user()));
+
+        return redirect()->route('profile');
 
     }
 
@@ -62,16 +63,18 @@ class UploadController extends Controller
 
         $user = Auth::user();
         $image = $request->file('file');
-        $filename = "car_$user->id.".$image->getClientOriginalExtension();
+        $filename = "car_".$user->id."_".str_random(10).".".$image->getClientOriginalExtension();
 
         Image::make($image)->resize(400,400)->save(public_path('/storage/carIMG/' .$filename));
 
 
-        $pictures = Picture::insert(['imgName' => $filename,
-            'car_id' => Car::all()->random()->id,]);
+        $pictures = Picture::create([
+            'imgName' => $filename,
+            'car_id' => Car::all()->random()->id
+        ]);
 
 
-        }
+    }
 
 
 

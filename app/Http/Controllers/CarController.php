@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Car;
+use App\Picture;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
@@ -76,8 +77,8 @@ class CarController extends Controller
      */
     public function show(Car $car){
         $car = Car::find($car->id);
-
-        return view('cars.show',['car'=>$car]);
+        $pictures = Picture::where('car_id',$car->id)->get();
+        return view('cars.show',['car'=>$car])->with('pictures',$pictures);
     }
 
     /**
