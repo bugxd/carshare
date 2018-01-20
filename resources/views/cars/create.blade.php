@@ -86,6 +86,16 @@
                 draggable: true,
                 title: 'Aktuelle Position'
             });
+
+            marker.addListener('drag', function() {
+
+                document.getElementById('lat').setAttribute('value',marker.getPosition().lat());
+                document.getElementById('lng').setAttribute('value',marker.getPosition().lng());
+            });
+
+            //set initial position to labels
+            document.getElementById('lat').setAttribute('value',marker.getPosition().lat());
+            document.getElementById('lng').setAttribute('value',marker.getPosition().lng());
         }
     </script>
 @endsection
