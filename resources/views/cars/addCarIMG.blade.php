@@ -21,4 +21,9 @@
         </div>
 
     </div>
+
+    <div class="row">
+        <a href="{{ route('cars.show',['car'=>$car]) }}" class="btn btn-primary">Fertig</a>
+
+    </div>
 @endsection

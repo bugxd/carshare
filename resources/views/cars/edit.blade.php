@@ -184,10 +184,6 @@
             <div class="col-md-4">
                 <button class="btn btn-primary" type="submit" value="submit">Änderungen speichern</button>
             </div>
-
-            <div class="col-md-4">
-                <a class="btn btn-primary" href="{{url('addCarIMG')}}">Bilder Hochladen</a>
-            </div>
         </div>
     </form>
     <!-- here for a delete test -->
