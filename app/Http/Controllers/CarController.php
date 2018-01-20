@@ -90,7 +90,13 @@ class CarController extends Controller
     public function edit(Car $car){
         $car = Car::find($car->id);
 
-        return view('cars.edit',['car'=>$car]);
+        if(Auth::user()->id == $car->user_id){
+            return view('cars.edit',['car'=>$car]);
+        }
+        else{
+            abort(403, 'Unauthorized action.');
+        }
+
     }
 
     /**
