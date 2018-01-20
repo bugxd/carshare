@@ -67,11 +67,11 @@ abstract class Kernel implements KernelInterface, RebootableInterface, Terminabl
     private $requestStackSize = 0;
     private $resetServices = false;
 
-    const VERSION = '3.4.1';
-    const VERSION_ID = 30401;
+    const VERSION = '3.4.3';
+    const VERSION_ID = 30403;
     const MAJOR_VERSION = 3;
     const MINOR_VERSION = 4;
-    const RELEASE_VERSION = 1;
+    const RELEASE_VERSION = 3;
     const EXTRA_VERSION = '';
 
     const END_OF_MAINTENANCE = '11/2020';
@@ -398,7 +398,7 @@ abstract class Kernel implements KernelInterface, RebootableInterface, Terminabl
     public function loadClassCache($name = 'classes', $extension = '.php')
     {
         if (\PHP_VERSION_ID >= 70000) {
-            @trigger_error(__METHOD__.'() is deprecated since version 3.3, to be removed in 4.0.', E_USER_DEPRECATED);
+            @trigger_error(__METHOD__.'() is deprecated since Symfony 3.3, to be removed in 4.0.', E_USER_DEPRECATED);
         }
 
         $this->loadClassCache = array($name, $extension);
@@ -412,7 +412,7 @@ abstract class Kernel implements KernelInterface, RebootableInterface, Terminabl
     public function setClassCache(array $classes)
     {
         if (\PHP_VERSION_ID >= 70000) {
-            @trigger_error(__METHOD__.'() is deprecated since version 3.3, to be removed in 4.0.', E_USER_DEPRECATED);
+            @trigger_error(__METHOD__.'() is deprecated since Symfony 3.3, to be removed in 4.0.', E_USER_DEPRECATED);
         }
 
         file_put_contents(($this->warmupDir ?: $this->getCacheDir()).'/classes.map', sprintf('<?php return %s;', var_export($classes, true)));
@@ -423,7 +423,7 @@ abstract class Kernel implements KernelInterface, RebootableInterface, Terminabl
      */
     public function setAnnotatedClassCache(array $annotatedClasses)
     {
-        file_put_contents(($this->warmupDir ?: $this->getCacheDir()).'/annotations.map', sprintf('<?php return %s;', var_export($annotatedClasses, true)), LOCK_EX);
+        file_put_contents(($this->warmupDir ?: $this->getCacheDir()).'/annotations.map', sprintf('<?php return %s;', var_export($annotatedClasses, true)));
     }
 
     /**
@@ -464,7 +464,7 @@ abstract class Kernel implements KernelInterface, RebootableInterface, Terminabl
     protected function doLoadClassCache($name, $extension)
     {
         if (\PHP_VERSION_ID >= 70000) {
-            @trigger_error(__METHOD__.'() is deprecated since version 3.3, to be removed in 4.0.', E_USER_DEPRECATED);
+            @trigger_error(__METHOD__.'() is deprecated since Symfony 3.3, to be removed in 4.0.', E_USER_DEPRECATED);
         }
         $cacheDir = $this->warmupDir ?: $this->getCacheDir();
 
@@ -594,7 +594,8 @@ abstract class Kernel implements KernelInterface, RebootableInterface, Terminabl
         if (!$fresh) {
             if ($this->debug) {
                 $collectedLogs = array();
-                $previousHandler = set_error_handler(function ($type, $message, $file, $line) use (&$collectedLogs, &$previousHandler) {
+                $previousHandler = defined('PHPUNIT_COMPOSER_INSTALL');
+                $previousHandler = $previousHandler ?: set_error_handler(function ($type, $message, $file, $line) use (&$collectedLogs, &$previousHandler) {
                     if (E_USER_DEPRECATED !== $type && E_DEPRECATED !== $type) {
                         return $previousHandler ? $previousHandler($type & ~E_WARNING, $message, $file, $line) : E_WARNING === $type;
                     }
@@ -634,13 +635,13 @@ abstract class Kernel implements KernelInterface, RebootableInterface, Terminabl
 
                 $oldContainer = file_exists($cache->getPath()) && is_object($oldContainer = include $cache->getPath()) ? new \ReflectionClass($oldContainer) : false;
             } finally {
-                if ($this->debug) {
+                if (!$this->debug) {
+                    error_reporting($errorLevel);
+                } elseif (true !== $previousHandler) {
                     restore_error_handler();
 
                     file_put_contents($cacheDir.'/'.$class.'Deprecations.log', serialize(array_values($collectedLogs)));
                     file_put_contents($cacheDir.'/'.$class.'Compiler.log', null !== $container ? implode("\n", $container->getCompiler()->getLog()) : '');
-                } else {
-                    error_reporting($errorLevel);
                 }
             }
 
@@ -661,7 +662,7 @@ abstract class Kernel implements KernelInterface, RebootableInterface, Terminabl
             $oldContainerDir = dirname($oldContainer->getFileName());
             foreach (glob(dirname($oldContainerDir).'/*.legacy') as $legacyContainer) {
                 if ($oldContainerDir.'.legacy' !== $legacyContainer && @unlink($legacyContainer)) {
-                    (new Filesystem())->remove(substr($legacyContainer, 0, -16));
+                    (new Filesystem())->remove(substr($legacyContainer, 0, -7));
                 }
             }
 
@@ -839,7 +840,7 @@ abstract class Kernel implements KernelInterface, RebootableInterface, Terminabl
             'file' => $cache->getPath(),
             'as_files' => true,
             'debug' => $this->debug,
-            'inline_class_loader_parameter' => !$this->loadClassCache && !class_exists(ClassCollectionLoader::class, false) ? 'container.dumper.inline_class_loader' : null,
+            'inline_class_loader_parameter' => \PHP_VERSION_ID >= 70000 && !$this->loadClassCache && !class_exists(ClassCollectionLoader::class, false) ? 'container.dumper.inline_class_loader' : null,
         ));
 
         $rootCode = array_pop($content);

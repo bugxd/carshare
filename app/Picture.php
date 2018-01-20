@@ -14,6 +14,6 @@ class Picture extends Model
 
     // DEFINE RELATIONSHIPS ------------------------------------
     public function cars(){
-        return $this->belongsTo('Car');
+        return $this->belongsTo('App\Car');
     }
 }

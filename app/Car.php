@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Picture;
 
 class Car extends Model
 {
@@ -14,10 +15,10 @@ class Car extends Model
 
     // DEFINE RELATIONSHIPS ------------------------------------
     public function user(){
-        return $this->belongsTo('User');
+        return $this->belongsTo('App\User');
     }
     public function pictures(){
-        return $this->hasMany('Picture');
+        return $this->hasMany('App\Picture');
     }
 
 }

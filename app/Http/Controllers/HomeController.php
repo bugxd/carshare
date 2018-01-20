@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Car;
+use \App\Picture;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -25,8 +26,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $cars = Car::all();
-        return view('welcome', ['cars' => $cars]);
+        $cars = Car::with('pictures')->get();
+        $pictures = Picture::get();
+
+        return view('welcome', ['cars' => $cars])->with('pictures',$pictures);
     }
 
     /**
