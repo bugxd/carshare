@@ -30,8 +30,8 @@ class ProfileController extends Controller
     public function showProfile()
     {
         $cars = Car::where('user_id', Auth::user()->id)->get();
-        $pictures = Picture::get();
-        return view('infos/profile')->with('cars', $cars)->with('pictures',$pictures);
+        //$pictures = Picture::get();
+        return view('infos/profile')->with('cars', $cars);//->with('pictures',$pictures);
     }
 
     /**
