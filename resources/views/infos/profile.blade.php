@@ -17,7 +17,7 @@
             <div class="card">
                 <div class="row">
                     <div class="col-md-4">
-                        <img class="card-img-top" src="@foreach ($pictures as $picture)@if ($picture->car_id === $car->id) {{ asset('storage/carIMG/'.$picture->imgName) }} @break @endif @endforeach" alt="Card image car{{ $car->id }}">
+                        <img class="card-img-top" src="@foreach ($car->pictures as $picture)@if ($loop->first) {{ asset('storage/carIMG/'.$picture->imgName) }} @break @endif @endforeach" alt="Card image car{{ $car->id }}">
                     </div>
                     <div class="col-md-8">
                         <div class="card-body">

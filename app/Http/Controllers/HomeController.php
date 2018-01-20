@@ -27,9 +27,8 @@ class HomeController extends Controller
     public function index()
     {
         $cars = Car::with('pictures')->get();
-        $pictures = Picture::get();
 
-        return view('welcome', ['cars' => $cars])->with('pictures',$pictures);
+        return view('welcome', ['cars' => $cars]);
     }
 
     /**
