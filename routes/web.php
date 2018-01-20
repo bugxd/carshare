@@ -69,4 +69,7 @@ Route::get('messages', 'MessageController@showMessages')->name('messages');
 Route::get('writeMessage/{carUser_id}', 'MessageController@writeMessage')->name('writeMessage');
 Route::post('createMessage/{carUser}', 'MessageController@create')->name('createMessage');
 
-
+/**
+ * Routes for Reservation
+ */
+Route::resource('reservations', 'ReservationController');
