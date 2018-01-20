@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Input as input;
 use App\User;
 use App\Car;
+use App\Picture;
 use Auth;
 use Hash;
 
@@ -29,7 +30,8 @@ class ProfileController extends Controller
     public function showProfile()
     {
         $cars = Car::where('user_id', Auth::user()->id)->get();
-        return view('infos/profile')->with('cars', $cars);
+        $pictures = Picture::get();
+        return view('infos/profile')->with('cars', $cars)->with('pictures',$pictures);
     }
 
     /**
