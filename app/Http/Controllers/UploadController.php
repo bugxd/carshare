@@ -54,13 +54,19 @@ class UploadController extends Controller
 
     }
 
+    public function dropzone(Car $car)
+    {
+        return view('cars/addCarIMG',['car'=>$car]);
+    }
+
     /**
      * Function to upload Car Pic with dropzone (D&D)
      * @param Request $request
+     * @param Car $car
      */
-    public function updateCarIMG(Request $request)
+    public function updateCarIMG(Request $request,Car $car)
     {
-
+        $car = Car::find($car->id);
         $user = Auth::user();
         $image = $request->file('file');
         $filename = "car_".$user->id."_".str_random(10).".".$image->getClientOriginalExtension();
@@ -70,8 +76,9 @@ class UploadController extends Controller
 
         $pictures = Picture::create([
             'imgName' => $filename,
-            'car_id' => Car::all()->random()->id
+            'car_id' => $car->id
         ]);
+
 
 
     }

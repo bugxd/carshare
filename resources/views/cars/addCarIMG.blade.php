@@ -2,16 +2,23 @@
 
 
 @section('content')
-<div class="container">
+    <div class="row">
+        <h1 class="h1">
+            Lade Bilder von deinem Auto hoch
+        </h1>
+    </div>
     <div class="row">
         <div class="col-md-12">
-            <h1>Laden Sie ihre Bilder hoch!</h1> <br>
-            {!! Form::open([ 'route' => [ 'dropzone.store' ],
-            'files' => true, 'enctype' => 'multipart/form-data', 'class' =>
-            'dropzone', 'id' => 'image-upload' ]) !!}
-            {!! Form::close() !!}
+            <form method="POST"
+                  action="{{ route('dropzone.store',[$car->id]) }}"
+                  accept-charset="UTF-8" enctype="multipart/form-data"
+                  class="dropzone dz-clickable" id="image-upload">
+                {{ csrf_field() }}
+                <div class="dz-default dz-message">
+                    <span>Ziehe deine Bilder in die Box</span>
+                </div>
+            </form>
         </div>
+
     </div>
-    <br><br><br><br><br><br><br><br><br>
-</div>
 @endsection

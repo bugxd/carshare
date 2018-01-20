@@ -62,7 +62,9 @@ class CarController extends Controller
             ]);
 
             if($car){
-                return redirect()->route('cars.show',['car'=>$car])->with('success','Auto wurde erfolgreich erstellt');
+                //redirect to upload images
+                return redirect()->route('addCarIMG',['car'=>$car]);
+                //return redirect()->route('cars.show',['car'=>$car])->with('success','Auto wurde erfolgreich erstellt');
             }
 
             return back()->withInput()->with('error','Es ist ein Fehler aufgetreten');
@@ -129,8 +131,7 @@ class CarController extends Controller
         ]);
 
         if($carUpdate){
-            return redirect()->route('cars.show',['car'=>$car])
-                ->with('success','Car updated successfully!');
+            return redirect()->route('cars.show',['car'=>$car])->with('success','Car updated successfully!');
         }
         //redirect
         //if fails

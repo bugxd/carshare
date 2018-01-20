@@ -52,8 +52,8 @@ Route::get('/profile', 'ProfileController@showProfile')->name('profile');
 Route::get('upload', 'UploadController@userPicUpload');
 Route::post('updateAvatar', 'UploadController@updateAvatar');
 
-Route::get('addCarIMG', 'HomeController@dropzone');
-Route::post('updateCarIMG', ['as'=>'dropzone.store','uses'=>'UploadController@updateCarIMG']);
+Route::get('addCarIMG/{car}', 'UploadController@dropzone')->name('addCarIMG');
+Route::post('updateCarIMG/{car}', ['as'=>'dropzone.store','uses'=>'UploadController@updateCarIMG']);
 
 /**
  * Routes for edit profile
