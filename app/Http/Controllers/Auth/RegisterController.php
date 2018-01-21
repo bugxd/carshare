@@ -100,7 +100,7 @@ class RegisterController extends Controller
             return redirect()->route('login')->with('success', 'Check inbox'); // zurückleiten auf route und Meldung ausgeben,
 
         }
-        return redirect()->route('login')->with('error', $validator->errors());
+        return redirect()->route('login')->with('success', 'Email already exists');
     }
 
 
@@ -115,10 +115,10 @@ class RegisterController extends Controller
         if(!is_null($user)){
             $user->is_active = 1;   // überschreibe is_active
             $user->activation_code = '';   // überschreibe token
-            $user->save();
+            $user->update();
             return redirect()->route('login')->with('success', 'Account verifiziert!');
         }
-        return redirect()->route('login')->with('error', 'Etwas lief schief..');
+        return redirect()->route('login')->with('success', 'Etwas lief schief..');
 
     }
 }
