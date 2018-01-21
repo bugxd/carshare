@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Reservation;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Input as input;
@@ -30,8 +31,9 @@ class ProfileController extends Controller
     public function showProfile()
     {
         $cars = Car::where('user_id', Auth::user()->id)->get();
+        $reservations = Reservation::where('user_id', Auth::user()->id)->get();
         //$pictures = Picture::get();
-        return view('infos/profile')->with('cars', $cars);//->with('pictures',$pictures);
+        return view('infos/profile')->with('cars', $cars)->with('reservations', $reservations);//->with('pictures',$pictures);
     }
 
     /**

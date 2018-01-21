@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Reservation;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
+
 
 class ReservationController extends Controller
 {
@@ -36,16 +39,23 @@ class ReservationController extends Controller
      */
     public function store(Request $request)
     {
-        if (Auth::check()) {
-            $reservation = Reservation::create([
-                'CID' => Car::where('licence_plate', $request->input('plate')->id),
-                'UID' => Auth::user()->id]);
+        if(Auth::check()){
+            $rent = Reservation::create([
 
-            if ($reservation) {
-                return 'Auto wurde erfolgreich erstellt';
+                'rent_from' => $request->input('rent_from'),
+                'rent_to' => $request->input('rent_to'),
+
+                'user_id' => Auth::user()->id,
+                'car_id' => $request->input('car_id')
+            ]);
+
+            if($rent){
+                //redirect to upload images
+                return redirect()->route('profile')->with('success','Auto wurde reserviert');
+                //return redirect()->route('cars.show',['car'=>$car])->with('success','Auto wurde erfolgreich erstellt');
             }
 
-            return 'Es ist ein Fehler aufgetreten';
+            return back()->withInput()->with('error','Es ist ein Fehler aufgetreten');
         }
     }
 

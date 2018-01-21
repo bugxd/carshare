@@ -4,7 +4,18 @@
     $('document').ready(function(){
         $('body').scrollspy({ target: '#navbar-example' })
         $('.carousel').carousel()
+        $( function() {
+            $( "#car-available-from" ).datepicker(
+                {dateFormat:'yy-mm-dd'}
+            );
+        } );
+        $( function() {
+            $( "#car-available-to" ).datepicker(
+                {dateFormat:'yy-mm-dd'}
+            );
+        } );
     });
+
 
 @endsection
 
@@ -170,7 +181,26 @@
                     <h4 id="list-item-5">Contact</h4>
                     <p><a href="{{ route('writeMessage', ['carUser_id'=>$car->user_id]) }}">Contact me</a></p>
                 </form>
-                <button class="btn btn-primary" type="submit" value="submit">Rent</button>
+                <form method="post" action="{{ route('reservations.store') }}">
+                    {{ csrf_field() }}
+                    <input type="hidden" id="car-id" name="car_id" value="{{ $car->id }}">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <label for="validationAvailableFrom">Verfügbar von</label>
+                            <input type="text" class="form-control" id="car-available-from" name="rent_from" placeholder="Y-m-d" required>
+                        </div>
+                        <div class="col-md-3">
+                            <label for="validationAvailableTo">Verfügbar bis</label>
+                            <input type="text" class="form-control" id="car-available-to" name="rent_to" placeholder="Y-m-d" required>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-4">
+                            <button class="btn btn-primary" type="submit" value="submit">Reservieren</button>
+                        </div>
+                    </div>
+                </form>
             </form>
         </div>
     </div>

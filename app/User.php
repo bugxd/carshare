@@ -28,10 +28,14 @@ class User extends Authenticatable
     ];
 
     public function cars(){
-        return $this->hasMany('Car');
+        return $this->hasMany('App\Car');
+    }
+
+    public function reservations(){
+        return $this->hasMany('App\Reservations');
     }
 
     public function feedbacks(){
-        return $this->belongsTo('Feedback');
+        return $this->belongsTo('App\Feedback');
     }
 }
