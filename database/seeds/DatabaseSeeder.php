@@ -11,13 +11,9 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        /**
-         *just for testing
-         *
         //call the seeder
         $this->call('CarShareSeeder');
         $this->command->info('CarShare app seeder finished :D');
-         */
     }
 }
 
@@ -28,9 +24,7 @@ class DatabaseSeeder extends Seeder
 class CarShareSeeder extends Seeder{
     public function run(){
 
-        /**
-         * just for testing
-         *
+
         //seed users
 
         $adminUser = \App\User::create(array(
@@ -42,7 +36,9 @@ class CarShareSeeder extends Seeder{
             'is_active'         => 1
         ));
 
-
+        /**
+         * just for testing
+         *
         $car_one = \App\Car::create(array(
             'brand' => 'VW',
             'car_type' => 'Golf',
