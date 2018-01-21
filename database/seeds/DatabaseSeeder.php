@@ -11,9 +11,13 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        /**
+         *just for testing
+         *
         //call the seeder
         $this->call('CarShareSeeder');
         $this->command->info('CarShare app seeder finished :D');
+         */
     }
 }
 
@@ -24,7 +28,9 @@ class DatabaseSeeder extends Seeder
 class CarShareSeeder extends Seeder{
     public function run(){
 
-
+        /**
+         * just for testing
+         *
         //seed users
 
         $adminUser = \App\User::create(array(
@@ -131,6 +137,6 @@ class CarShareSeeder extends Seeder{
             'lat' => 46.604849358023095,
             'lng' => 13.827474091046156,
             'user_id' => 1
-        ));
+        ));  */
     }
 }
