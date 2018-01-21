@@ -69,6 +69,10 @@ Route::get('messages', 'MessageController@showMessages')->name('messages');
 Route::get('writeMessage/{carUser_id}', 'MessageController@writeMessage')->name('writeMessage');
 Route::post('createMessage/{carUser}', 'MessageController@create')->name('createMessage');
 
+Route::get('feedback', 'FeedbackController@showFeedback')->name('feedback');
+Route::get('writeFeedback/{car_id}', 'FeedbackController@writeFeedback')->name('writeFeedback');
+Route::post('createFeedback/{car_id}', 'FeedbackController@create')->name('createFeedback');
+
 /**
  * Routes for Reservation
  */

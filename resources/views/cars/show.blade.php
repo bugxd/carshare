@@ -175,6 +175,13 @@
                     <h4 id="list-item-3">Price</h4>
 
                     {{ $car->price }}
+
+                    <h4 id="list-item-4">Bewertung</h4>
+
+                    @foreach ($feedback as $feedback)
+                    <p><strong>User ID_{{ $feedback->user_id }} schrieb: </strong> {{ $feedback->feedback }} </p>
+                    @endforeach
+
 					<p><br>
                     <h4 id="list-item-4">Rent</h4>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
