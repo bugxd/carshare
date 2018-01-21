@@ -15,7 +15,10 @@ class CreateReservationsTable extends Migration
     {
         Schema::create('reservations', function (Blueprint $table) {
             $table->increments('id');
-            //TODO: add columns
+            $table->integer('user_id');
+            $table->integer('car_id');
+            $table->date('rent_from'); // verfügbar von
+            $table->date('rent_to'); // verfügbar bis
             $table->timestamps();
         });
     }
