@@ -9,9 +9,9 @@
             <h3>Hallo, {{ Auth::user()->first_name }} {{ Auth::user()->last_name }}</h3>
         </div>
     </div>
-    <br><h3>Deine Autos</h3>
+    <br><br><h3>Deine Autos</h3>
     <a href="cars/create" class="btn btn-primary"><span class="badge badge-secondary">+</span>Neues Auto Anlege</a>
-
+	<p><br>
     @foreach($cars as $car)
         <div class="row">
             <div class="card">
@@ -24,12 +24,13 @@
                             <h4 class="card-title">{{ $car->brand }} {{ $car->car_type }}</h4>
                             <ul class="list-group">
                                 <li class="list-group-item justify-content-between">
-                                    Verfügbar von <span class="badge badge-secondary">{{ $car->available_from }}</span> bis <span class="badge badge-secondary">{{ $car->available_to }}</span>
+                                    Verfügbar von: <span class="badge badge-secondary">{{ $car->available_from }}</span><br> Verfügbar bis: <span class="badge badge-secondary">{{ $car->available_to }}</span>
                                 </li>
                                 <li class="list-group-item justify-content-between">
-                                    Preis <span class="badge badge-secondary">{{ $car->price }}€</span> pro Tag
+                                    Preis pro Tag: <span class="badge badge-secondary">{{ $car->price }}€</span> 
                                 </li>
                             </ul>
+                            <br>
 
                             <a href="cars/{{ $car->id }}/edit" class="btn btn-primary">Bearbeiten</a>
 

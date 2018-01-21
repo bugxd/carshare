@@ -101,57 +101,58 @@
                     <a class="list-group-item list-group-item-action" href="#list-item-4">Rent</a>
                     <a class="list-group-item list-group-item-action" href="#list-item-5">Contact</a>
                 </div>
+                <br><br>
                 <form data-spy="scroll" data-target="#list-example" data-offset="0" class="scrollspy-example">
                     <h4 id="list-item-1">CarData</h4>
-
+					<br>
                     <div class="row">
                         <div class="col-md-8 mb-3">
-                            Kennzeichen {{ $car->licence_plate }}
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-4 mb-3">
-                            Farbe {{ $car->color }}
-                        </div>
-                        <div class="col-md-4 mb-3">
-                            Anzahl der Sitzplätze {{ $car->nr_of_seats }}
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-2 mb-3">
-                            Eigengewicht {{ $car->weight }}
-                        </div>
-                        <div class="col-md-2 mb-3">
-                            Hubraum {{ $car->capacity }}
-                        </div>
-                        <div class="col-md-2 mb-3">
-                            Leistung {{ $car->power }}
-                        </div>
-                        <div class="col-md-2 mb-3">
-                            Bauartgeschwindigkeit {{ $car->design_speed }}
+                            Kennzeichen: {{ $car->licence_plate }}
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-3 mb-3">
-                            Nutzlast {{ $car->payload }}
+                            Farbe: {{ $car->color }}
                         </div>
                         <div class="col-md-3 mb-3">
-                            Sattellast {{ $car->vertical_load }}
+                            Anzahl der Sitzplätze: {{ $car->nr_of_seats }}
                         </div>
                         <div class="col-md-2 mb-3">
-                            Achslasten {{ $car->axe_load }}
+                            Leistung: {{ $car->power }}
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-md-3 mb-3">
+                            Eigengewicht: {{ $car->weight }}
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            Hubraum: {{ $car->capacity }}
+                        </div>
+                        <div class="col-md-2 mb-3">
+                            Bauartgeschwindigkeit: {{ $car->design_speed }}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3 mb-3">
+                            Nutzlast: {{ $car->payload }}
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            Sattellast: {{ $car->vertical_load }}
+                        </div>
+                        <div class="col-md-2 mb-3">
+                            Achslasten: {{ $car->axe_load }}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
                             <input class="form-check-input" type="checkbox" id="animal_allowed" value="{{ $car->animal_allowed }}" disabled> Tiere erlaubt
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-4 mb-3">
                             <input class="form-check-input" type="checkbox" id="smoking_allowed" value="{{ $car->smoking_allowed }}" disabled> Rauchen erlaubt
                         </div>
 
                     </div>
-
+					<br>
                     <h4 id="list-item-2">Location</h4>
                     <div class="row">
                         <div class="col-md-8">
@@ -159,16 +160,16 @@
                             <div id="map"></div>
                         </div>
                     </div>
-
+					<p><br>
                     <h4 id="list-item-3">Price</h4>
 
                     {{ $car->price }}
-
+					<p><br>
                     <h4 id="list-item-4">Rent</h4>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                    
+                    <br>
                     <h4 id="list-item-5">Contact</h4>
-                    <p><a href="{{ route('writeMessage', ['carUser_id'=>$car->user_id]) }}">Contact me</a></p>
+                    <p><a href="{{ route('writeMessage', ['carUser_id'=>$car->user_id]) }}">Contact me</a></p><br>
                 </form>
                 <button class="btn btn-primary" type="submit" value="submit">Rent</button>
             </form>
