@@ -8,11 +8,9 @@
             <h3>Hallo, {{ Auth::user()->first_name }} {{ Auth::user()->last_name }}</h3>
         </div>
     </div>
-<<<<<<< HEAD
     <br><br><h3>Deine Autos</h3>
     <a href="cars/create" class="btn btn-primary"><span class="badge badge-secondary">+</span>Neues Auto Anlege</a>
 	<p><br>
-=======
     <br>
     <div class="row">
         <div class="col-md-6">
@@ -36,6 +34,9 @@
                                 <li class="list-group-item justify-content-between">
                                     Preis <span class="badge badge-secondary">{{ $rent->car->price }}€</span> pro Tag
                                 </li>
+                                <li class="list-group-item justify-content-between">
+                                    <a class="btn btn-primary" href="{{ route('writeFeedback', ['car_id'=>$rent->car->id]) }}" value="Bewerten">Bewerten</a>
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -53,7 +54,6 @@
         </div>
 
     </div>
->>>>>>> 76650a35e1a7e716377a7bf63c77f52e11d2fe91
     @foreach($cars as $car)
         <div class="row">
             <div class="card">
