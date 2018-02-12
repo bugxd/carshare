@@ -6,7 +6,7 @@
     <br><h5>HERAUSGEBER VERANTWORTLICH FÜR DEN INHALT</h5><br>
 
     <h6>CarShare-Projektgruppe:</h6>
-        Lukas Feistritzer, Sebastian Trattnig, Daniela Stefanics, Daniel Urbanics<br><br>
+        Lukas Feistritzer, Sebastian Trattnig, Daniela Stefanics<br><br>
 
         <h6>Alpen-Adria-Universität Klagenfurt</h6>
         Universitätsstraße 65-67<br>
