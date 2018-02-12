@@ -1,6 +1,6 @@
 
 
-<footer class="navbar-light bg-light">
+<footer id="footer" class="navbar-light bg-light">
 <div class="container">
     <div class="row">
         <div class="col-4">

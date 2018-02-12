@@ -4293,105 +4293,6 @@
         "homepage": "http://laravelcollective.com"
     },
     {
-        "name": "roave/signature",
-        "version": "1.0.0",
-        "version_normalized": "1.0.0.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/Roave/Signature.git",
-            "reference": "bed4ecbdd7f312ab6bb39561ac191f520bcee386"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/Roave/Signature/zipball/bed4ecbdd7f312ab6bb39561ac191f520bcee386",
-            "reference": "bed4ecbdd7f312ab6bb39561ac191f520bcee386",
-            "shasum": ""
-        },
-        "require": {
-            "php": "^7.0|^7.1"
-        },
-        "require-dev": {
-            "phpunit/phpunit": "^5.6"
-        },
-        "time": "2017-02-17T13:53:21+00:00",
-        "type": "library",
-        "installation-source": "dist",
-        "autoload": {
-            "psr-4": {
-                "Roave\\Signature\\": "src"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "description": "Sign and verify stuff"
-    },
-    {
-        "name": "roave/better-reflection",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/Roave/BetterReflection.git",
-            "reference": "c87d856"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/Roave/BetterReflection/zipball/c87d856",
-            "reference": "c87d856",
-            "shasum": ""
-        },
-        "require": {
-            "nikic/php-parser": "^3.1.1",
-            "php": ">=7.1.0,<7.3.0",
-            "phpdocumentor/reflection-docblock": "^4.1.1",
-            "phpdocumentor/type-resolver": "^0.4.0",
-            "roave/signature": "^1.0"
-        },
-        "require-dev": {
-            "phpunit/phpunit": "^6.3.0"
-        },
-        "suggest": {
-            "composer/composer": "Required to use the ComposerSourceLocator"
-        },
-        "time": "2018-01-05T12:29:43+00:00",
-        "type": "library",
-        "installation-source": "dist",
-        "autoload": {
-            "psr-4": {
-                "Roave\\BetterReflection\\": "src"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Marco Pivetta",
-                "email": "ocramius@gmail.com",
-                "homepage": "http://ocramius.github.io/"
-            },
-            {
-                "name": "James Titcumb",
-                "email": "james@asgrim.com",
-                "homepage": "https://github.com/asgrim"
-            },
-            {
-                "name": "Gary Hockin",
-                "email": "gary@roave.com",
-                "homepage": "https://github.com/geeh"
-            },
-            {
-                "name": "Jaroslav Hanslík",
-                "email": "kukulich@kukulich.cz",
-                "homepage": "https://github.com/kukulich"
-            }
-        ],
-        "description": "Better Reflection - an improved code reflection API"
-    },
-    {
         "name": "zendframework/zend-eventmanager",
         "version": "3.2.0",
         "version_normalized": "3.2.0.0",
@@ -5145,6 +5046,105 @@
         ]
     },
     {
+        "name": "roave/signature",
+        "version": "1.0.0",
+        "version_normalized": "1.0.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/Roave/Signature.git",
+            "reference": "bed4ecbdd7f312ab6bb39561ac191f520bcee386"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/Roave/Signature/zipball/bed4ecbdd7f312ab6bb39561ac191f520bcee386",
+            "reference": "bed4ecbdd7f312ab6bb39561ac191f520bcee386",
+            "shasum": ""
+        },
+        "require": {
+            "php": "^7.0|^7.1"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "^5.6"
+        },
+        "time": "2017-02-17T13:53:21+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Roave\\Signature\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "description": "Sign and verify stuff"
+    },
+    {
+        "name": "roave/better-reflection",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/Roave/BetterReflection.git",
+            "reference": "c87d856"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/Roave/BetterReflection/zipball/c87d856",
+            "reference": "c87d856",
+            "shasum": ""
+        },
+        "require": {
+            "nikic/php-parser": "^3.1.1",
+            "php": ">=7.1.0,<7.3.0",
+            "phpdocumentor/reflection-docblock": "^4.1.1",
+            "phpdocumentor/type-resolver": "^0.4.0",
+            "roave/signature": "^1.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "^6.3.0"
+        },
+        "suggest": {
+            "composer/composer": "Required to use the ComposerSourceLocator"
+        },
+        "time": "2018-01-05T12:29:43+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Roave\\BetterReflection\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Marco Pivetta",
+                "email": "ocramius@gmail.com",
+                "homepage": "http://ocramius.github.io/"
+            },
+            {
+                "name": "James Titcumb",
+                "email": "james@asgrim.com",
+                "homepage": "https://github.com/asgrim"
+            },
+            {
+                "name": "Gary Hockin",
+                "email": "gary@roave.com",
+                "homepage": "https://github.com/geeh"
+            },
+            {
+                "name": "Jaroslav Hanslík",
+                "email": "kukulich@kukulich.cz",
+                "homepage": "https://github.com/kukulich"
+            }
+        ],
+        "description": "Better Reflection - an improved code reflection API"
+    },
+    {
         "name": "nette/finder",
         "version": "v2.4.1",
         "version_normalized": "2.4.1.0",
@@ -5401,6 +5401,135 @@
         "description": "PHP 7.1 source code API generator."
     },
     {
+        "name": "mnapoli/front-yaml",
+        "version": "1.6.0",
+        "version_normalized": "1.6.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/mnapoli/FrontYAML.git",
+            "reference": "24070ace8b741247bb3161cbb38ecc541268b296"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/mnapoli/FrontYAML/zipball/24070ace8b741247bb3161cbb38ecc541268b296",
+            "reference": "24070ace8b741247bb3161cbb38ecc541268b296",
+            "shasum": ""
+        },
+        "require": {
+            "erusev/parsedown": "~1.0",
+            "php": ">=5.4.0",
+            "symfony/yaml": "~2.1|^3.0|^4.0"
+        },
+        "require-dev": {
+            "league/commonmark": "~0.7",
+            "phpunit/phpunit": "~4.5"
+        },
+        "time": "2017-10-29T19:29:55+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Mni\\FrontYAML\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ]
+    },
+    {
+        "name": "php-di/invoker",
+        "version": "2.0.0",
+        "version_normalized": "2.0.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/PHP-DI/Invoker.git",
+            "reference": "540c27c86f663e20fe39a24cd72fa76cdb21d41a"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/PHP-DI/Invoker/zipball/540c27c86f663e20fe39a24cd72fa76cdb21d41a",
+            "reference": "540c27c86f663e20fe39a24cd72fa76cdb21d41a",
+            "shasum": ""
+        },
+        "require": {
+            "psr/container": "~1.0"
+        },
+        "require-dev": {
+            "athletic/athletic": "~0.1.8",
+            "phpunit/phpunit": "~4.5"
+        },
+        "time": "2017-03-20T19:28:22+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Invoker\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "description": "Generic and extensible callable invoker",
+        "homepage": "https://github.com/PHP-DI/Invoker",
+        "keywords": [
+            "callable",
+            "dependency",
+            "dependency-injection",
+            "injection",
+            "invoke",
+            "invoker"
+        ]
+    },
+    {
+        "name": "mnapoli/silly",
+        "version": "1.7.0",
+        "version_normalized": "1.7.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/mnapoli/silly.git",
+            "reference": "bd6d1ec6d1644a5dfd5325492f2f8d36037da32c"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/mnapoli/silly/zipball/bd6d1ec6d1644a5dfd5325492f2f8d36037da32c",
+            "reference": "bd6d1ec6d1644a5dfd5325492f2f8d36037da32c",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=7.0",
+            "php-di/invoker": "~2.0",
+            "psr/container": "^1.0",
+            "symfony/console": "~3.0|~4.0"
+        },
+        "require-dev": {
+            "mnapoli/phpunit-easymock": "~1.0",
+            "phpunit/phpunit": "~6.4"
+        },
+        "time": "2017-11-18T14:01:30+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Silly\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "description": "Silly CLI micro-framework based on Symfony Console",
+        "keywords": [
+            "PSR-11",
+            "cli",
+            "console",
+            "framework",
+            "micro-framework",
+            "silly"
+        ]
+    },
+    {
         "name": "mpociot/reflection-docblock",
         "version": "1.0.1",
         "version_normalized": "1.0.1.0",
@@ -5558,135 +5687,6 @@
             "framework",
             "renderer",
             "windwalker"
-        ]
-    },
-    {
-        "name": "mnapoli/front-yaml",
-        "version": "1.6.0",
-        "version_normalized": "1.6.0.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/mnapoli/FrontYAML.git",
-            "reference": "24070ace8b741247bb3161cbb38ecc541268b296"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/mnapoli/FrontYAML/zipball/24070ace8b741247bb3161cbb38ecc541268b296",
-            "reference": "24070ace8b741247bb3161cbb38ecc541268b296",
-            "shasum": ""
-        },
-        "require": {
-            "erusev/parsedown": "~1.0",
-            "php": ">=5.4.0",
-            "symfony/yaml": "~2.1|^3.0|^4.0"
-        },
-        "require-dev": {
-            "league/commonmark": "~0.7",
-            "phpunit/phpunit": "~4.5"
-        },
-        "time": "2017-10-29T19:29:55+00:00",
-        "type": "library",
-        "installation-source": "dist",
-        "autoload": {
-            "psr-4": {
-                "Mni\\FrontYAML\\": "src/"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ]
-    },
-    {
-        "name": "php-di/invoker",
-        "version": "2.0.0",
-        "version_normalized": "2.0.0.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/PHP-DI/Invoker.git",
-            "reference": "540c27c86f663e20fe39a24cd72fa76cdb21d41a"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/PHP-DI/Invoker/zipball/540c27c86f663e20fe39a24cd72fa76cdb21d41a",
-            "reference": "540c27c86f663e20fe39a24cd72fa76cdb21d41a",
-            "shasum": ""
-        },
-        "require": {
-            "psr/container": "~1.0"
-        },
-        "require-dev": {
-            "athletic/athletic": "~0.1.8",
-            "phpunit/phpunit": "~4.5"
-        },
-        "time": "2017-03-20T19:28:22+00:00",
-        "type": "library",
-        "installation-source": "dist",
-        "autoload": {
-            "psr-4": {
-                "Invoker\\": "src/"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "description": "Generic and extensible callable invoker",
-        "homepage": "https://github.com/PHP-DI/Invoker",
-        "keywords": [
-            "callable",
-            "dependency",
-            "dependency-injection",
-            "injection",
-            "invoke",
-            "invoker"
-        ]
-    },
-    {
-        "name": "mnapoli/silly",
-        "version": "1.7.0",
-        "version_normalized": "1.7.0.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/mnapoli/silly.git",
-            "reference": "bd6d1ec6d1644a5dfd5325492f2f8d36037da32c"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/mnapoli/silly/zipball/bd6d1ec6d1644a5dfd5325492f2f8d36037da32c",
-            "reference": "bd6d1ec6d1644a5dfd5325492f2f8d36037da32c",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=7.0",
-            "php-di/invoker": "~2.0",
-            "psr/container": "^1.0",
-            "symfony/console": "~3.0|~4.0"
-        },
-        "require-dev": {
-            "mnapoli/phpunit-easymock": "~1.0",
-            "phpunit/phpunit": "~6.4"
-        },
-        "time": "2017-11-18T14:01:30+00:00",
-        "type": "library",
-        "installation-source": "dist",
-        "autoload": {
-            "psr-4": {
-                "Silly\\": "src/"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "description": "Silly CLI micro-framework based on Symfony Console",
-        "keywords": [
-            "PSR-11",
-            "cli",
-            "console",
-            "framework",
-            "micro-framework",
-            "silly"
         ]
     },
     {

@@ -6,14 +6,11 @@
    @if(count($messages) >0) 
    		@foreach($messages as $message)
    			<div class="card card-body bg-light">
-   				@if($message->gelesen ==1)
-   	   				<b><p>Betreff: {{$message->betreff}}</p>
-   	   				<p>{{$message->inhalt}}</p></b>
-   	   			@else
    	   				<p>Betreff: {{$message->betreff}}</p>
    	   				<p>{{$message->inhalt}}</p>
-   	   			@endif
    				<small>erzeugt am {{$message->created_at}}</small>
+   				<p><br>
+   				<a href="{{ route('writeMessage', ['carUser_id'=>$message->senderID]) }}" class="btn btn-primary">Antworten</a>
    			</div>
    		@endforeach
    		{{ $messages->links() }}
