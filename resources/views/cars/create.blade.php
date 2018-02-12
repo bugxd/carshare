@@ -200,7 +200,7 @@
         </div>
 
         <div class="row">
-            <div class="col-md-8">
+            <div class="col-md-8 container">
                 <label>Position des Autos</label>
                 <div id="map"></div>
             </div>

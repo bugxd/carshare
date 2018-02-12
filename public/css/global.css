@@ -1,5 +1,14 @@
 #footer {
-	position: fixed;
+	position: absolute;
 	bottom: 0;
 	width: 100%;
+}
+
+html {
+	position: relative;
+	min-height: 100%;
+}
+
+body {
+	margin: 0 0 200px; /* bottom = footer height */
 }

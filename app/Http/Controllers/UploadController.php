@@ -71,7 +71,7 @@ class UploadController extends Controller
         $image = $request->file('file');
         $filename = "car_".$user->id."_".str_random(10).".".$image->getClientOriginalExtension();
 
-        Image::make($image)->resize(400,400)->save(public_path('/storage/carIMG/' .$filename));
+        Image::make($image)->resize(500,400)->save(public_path('/storage/carIMG/' .$filename));
 
 
         $pictures = Picture::create([
