@@ -20,7 +20,7 @@
             <div class="card">
                 <div class="row">
                     <div class="col-md-4">
-                        <img style="width: 180px; height: 150px;" class="card-img-top" src="@foreach ($rent->car->pictures as $picture)@if ($loop->first) {{ asset('storage/carIMG/'.$picture->imgName) }} @break @endif @endforeach" alt="Card image car{{ $rent->car_id }}">
+                        <br><br><img style="width: 300px; height: 230px; margin-right: 300px;" class="card-img-top rounded" src="@foreach ($rent->car->pictures as $picture)@if ($loop->first) {{ asset('storage/carIMG/'.$picture->imgName) }} @break @endif @endforeach" alt="Card image car{{ $rent->car_id }}">
                     </div>
                     <div class="col-md-8">
                         <div class="card-body">
@@ -40,7 +40,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div><br>
     @endforeach
 
     <div class="row">
@@ -48,16 +48,16 @@
             <h3>Deine Autos</h3>
         </div>
         <div class="col-md-6">
-            <a href="cars/create" class="btn btn-primary"><span class="badge badge-secondary">+</span>Neues Auto Anlege</a>
+            <a style="margin-left: 0px;" href="cars/create" class="btn btn-primary"><span class="badge badge-secondary">+</span>Neues Auto Anlege</a>
         </div>
+    </div><br>
 
-    </div>
     @foreach($cars as $car)
         <div class="row">
             <div class="card">
                 <div class="row">
                     <div class="col-md-4">
-                        <br><br><img style="width: 180px; height: 150px;" class="card-img-top" src="@foreach ($car->pictures as $picture)@if ($loop->first) {{ asset('storage/carIMG/'.$picture->imgName) }} @break @endif @endforeach" alt="Card image car{{ $car->id }}">
+                        <br><br><img style="width: 300px; height: 230px; margin-right: 400px;" class="card-img-top rounded" src="@foreach ($car->pictures as $picture)@if ($loop->first) {{ asset('storage/carIMG/'.$picture->imgName) }} @break @endif @endforeach" alt="Card image car{{ $car->id }}">
                     </div>
                     <div class="col-md-8">
                         <div class="card-body">
@@ -95,7 +95,7 @@
         </form>
     @endforeach
 
-</div>
+</div><br><br><br><br>
 
 @endsection
 

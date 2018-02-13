@@ -3,9 +3,11 @@
 
 @section('content')
     <div class="row">
+       <div class="container" >
         <h1 class="h1">
             Lade Bilder von deinem Auto hoch
         </h1>
+       </div>
     </div>
     <div class="row">
         <div class="col-md-12">
@@ -20,10 +22,11 @@
             </form>
         </div>
 
-    </div>
+    </div><br>
 
     <div class="row">
+        <div class="container">
         <a href="{{ route('cars.show',['car'=>$car]) }}" class="btn btn-primary">Fertig</a>
-
+        </div>
     </div>
 @endsection

@@ -18,7 +18,7 @@
         Vervielfältigung auf Datenträger wie CD-ROM, DVD-ROM etc. – auch auszugsweise – nur nach vorheriger
         schriftlicher Zustimmung von CarShare erfolgen.
     </p>
-</div>
+</div><br><br><br><br><br><br>
 @endsection
 
 @section('content')

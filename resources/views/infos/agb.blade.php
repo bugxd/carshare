@@ -15,5 +15,5 @@
 	das Vervielf&aumlltigungs- und Verbreitungsrecht, d.h. das Recht, die Inhalte beliebig zu speichern, zu vervielf&aumlltigen und in elektronischen oder anderen Medien (z. B. Internet, Zeitungen, Zeitschriften) ganz oder teilweise zug&aumlnglich zu machen oder zu verbreiten. <br><br>
     <h6>4. Haftung</h6>
     F&uumlr Sch&aumlden, die dem Nutzer im Zusammenhang mit den Services von Carshare entsteht, gilt Folgendes: Bei Vorsatz oder grober Fahrl&aumlssigkeit sowie bei Vorliegen einer Garantie ist die Haftung unbeschr&aumlnkt. Bei leichter Fahrl&aumlssigkeit ist die Haftung im Falle der Verletzung von Leben, K&oumlrper oder Gesundheit ebenfalls unbeschr&aumlnkt. Bei einer leicht fahrl&aumlssigen Verletzung wesentlicher Vertragspflichten ist die Haftung beschr&aumlnkt auf darauf zur&uumlckzuf&uumlhrende Sach- und Verm&oumlgenssch&aumlden in H&oumlhe des vorhersehbaren, typischerweise eintretenden Schadens. Jede weitergehende Haftung auf Schadensersatz ist, ausser f&uumlr Anspr&uumlche nach dem Produkthaftungsgesetz, ausgeschlossen.
-</div>
+</div><br><br><br><br><br><br><br>
 @endsection

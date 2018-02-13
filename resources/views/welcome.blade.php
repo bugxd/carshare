@@ -94,14 +94,15 @@
     </div>
     <div id="row">
         <div id="map"></div>
-    </div>
+    </div><br>
 
     @foreach($cars as $car)
         <div class="row">
+            <div class="container" >
             <div class="card">
                 <div class="row">
                     <div class="col-md-4">
-                        <img style="width: 180px; height: 150px;" class="card-img-top" src="@foreach ($car->pictures as $picture)@if ($loop->first) {{ asset('storage/carIMG/'.$picture->imgName) }} @break @endif @endforeach" alt="Card image car{{ $car->id }}">
+                        <img style="width: 300px; height: 230px;" class="card-img-top rounded" src="@foreach ($car->pictures as $picture)@if ($loop->first) {{ asset('storage/carIMG/'.$picture->imgName) }} @break @endif @endforeach" alt="Card image car{{ $car->id }}">
                     </div>
                     <div class="col-md-8">
                         <div class="card-body">
@@ -122,8 +123,9 @@
                 </div>
             </div>
         </div>
+        </div>
     @endforeach
 
-
+<br><br><br><br><br>
 
 @endsection

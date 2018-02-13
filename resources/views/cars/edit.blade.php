@@ -199,4 +199,5 @@
         <input type="hidden" name="_method" value="DELETE">
         {{ csrf_field() }}
     </form>
+    <br><br><br>
 @endsection
