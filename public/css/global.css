@@ -2,13 +2,16 @@
 	position: absolute;
 	bottom: 0;
 	width: 100%;
-}
 
+}
 html {
 	position: relative;
 	min-height: 100%;
 }
-
 body {
-	margin: 0 0 200px; /* bottom = footer height */
+	margin: 0 0 200px;
+
+}
+.extras1 {
+	margin: 0 50px 0 20px;
 }

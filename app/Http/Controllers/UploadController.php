@@ -43,7 +43,7 @@ class UploadController extends Controller
             $user = Auth::user();
             $avatar = $request->file('avatar');
             $filename = "user_$user->id.". $avatar->getClientOriginalExtension();
-            Image::make($avatar)->resize(300,300)->save(public_path('/storage/userIMG/' .$filename));
+            Image::make($avatar)->resize(180,150)->save(public_path('/storage/userIMG/' .$filename));
 
             $user->avatar = $filename;
             $user->save();
@@ -71,7 +71,7 @@ class UploadController extends Controller
         $image = $request->file('file');
         $filename = "car_".$user->id."_".str_random(10).".".$image->getClientOriginalExtension();
 
-        Image::make($image)->resize(500,400)->save(public_path('/storage/carIMG/' .$filename));
+        Image::make($image)->resize(300,220)->save(public_path('/storage/carIMG/' .$filename));
 
 
         $pictures = Picture::create([

@@ -200,7 +200,7 @@
         </div>
 
         <div class="row">
-            <div class="col-md-8 container">
+            <div class="col-md-8">
                 <label>Position des Autos</label>
                 <div id="map"></div>
             </div>
@@ -215,9 +215,9 @@
         </div>
 
         <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-4"><br>
                 <button class="btn btn-primary" type="submit" value="submit">Änderungen speichern</button>
             </div>
-        </div>
+        </div><br><br><br><br>
     </form>
 @endsection

@@ -47,7 +47,7 @@
             @foreach($cars as $car)
                 var contentString=
                     ' <div class="card" style="width: 20rem;">' +
-                    '    <img class="card-img-top" ' +
+                    '    <img style="width: 300px; height: 220px;" class="card-img-top" ' +
                     '         src="@foreach ($car->pictures as $picture)@if ($loop->first) {{ asset('storage/carIMG/'.$picture->imgName) }} @endif @endforeach" alt="Card image car{{ $car->id }}">' +
                     '    <div class="card-body">' +
                     '      <h4 class="card-title">{{ $car->brand }} {{ $car->car_type }}</h4>' +

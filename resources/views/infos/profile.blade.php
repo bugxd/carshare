@@ -3,14 +3,12 @@
 @section('content')
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
-            <img src="storage/userIMG/{{ Auth::user()->avatar }}" style="float:left; border-radius: 50%; margin-right: 25px; width: 150px; height: 150px" class="rounded-circle" />
+            <img src="storage/userIMG/{{ Auth::user()->avatar }}" style="float:left; border-radius: 50%; margin-right: 25px; width: 180px; height: 150px" class="rounded-circle" />
             <a style="float: right" href="{{ url('/profileEdit') }}" >Bearbeiten</a>
             <h3>Hallo, {{ Auth::user()->first_name }} {{ Auth::user()->last_name }}</h3>
         </div>
     </div>
-    <br><br><h3>Deine Autos</h3>
-    <a href="cars/create" class="btn btn-primary"><span class="badge badge-secondary">+</span>Neues Auto Anlege</a>
-	<p><br>
+    <br><br>
     <br>
     <div class="row">
         <div class="col-md-6">
@@ -59,7 +57,7 @@
             <div class="card">
                 <div class="row">
                     <div class="col-md-4">
-                        <img class="card-img-top" src="@foreach ($car->pictures as $picture)@if ($loop->first) {{ asset('storage/carIMG/'.$picture->imgName) }} @break @endif @endforeach" alt="Card image car{{ $car->id }}">
+                        <br><br><img style="width: 180px; height: 150px;" class="card-img-top" src="@foreach ($car->pictures as $picture)@if ($loop->first) {{ asset('storage/carIMG/'.$picture->imgName) }} @break @endif @endforeach" alt="Card image car{{ $car->id }}">
                     </div>
                     <div class="col-md-8">
                         <div class="card-body">

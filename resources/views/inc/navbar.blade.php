@@ -8,7 +8,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="{{ url('/') }}">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Link</a>
@@ -27,11 +27,12 @@
                             MENÜ
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Autos in der Nähe..</a>
-                            <a class="dropdown-item" href="{{ url('/create') }}">Auto anbieten</a>
-                            <a class="dropdown-item" href="#">Deine Autos</a>
+                            <a class="dropdown-item" href="{{ url('/') }}">Autos in der Nähe..</a>
+                            <a class="dropdown-item" href="{{ route('profile') }}">Auto anbieten</a>
+                            <a class="dropdown-item" href="{{ route('profile') }}">Deine Autos</a>
+                            <a class="dropdown-item" href="{{ route('profile') }}">Deine Reservierungen</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="{{ route('messages') }}">Messages</a>
+                            <a class="dropdown-item" href="{{ route('messages') }}">Nachrichten</a>
                         </div>
                     </div>
                 </li>

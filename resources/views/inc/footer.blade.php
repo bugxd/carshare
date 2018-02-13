@@ -5,8 +5,8 @@
     <div class="row">
         <div class="col-4">
             <br>
-            <a href="{{route('rentCar')}}">Auto ausleihen</a><br>
-            <a href="{{route('lendCar')}}">Auto verleihen</a><br>
+            <a href="{{ url('/') }}">Auto ausleihen</a><br>
+            <a href="{{ route('profile') }}">Auto verleihen</a><br>
             <a href="{{route('faq')}}">FAQ</a><br>
             <a href="{{route('about')}}">About</a><br>
             <a href="{{route('agb')}}">AGB</a>
