@@ -96,4 +96,34 @@
         <div id="map"></div>
     </div>
 
+    @foreach($cars as $car)
+        <div class="row">
+            <div class="card">
+                <div class="row">
+                    <div class="col-md-4">
+                        <img style="width: 180px; height: 150px;" class="card-img-top" src="@foreach ($car->pictures as $picture)@if ($loop->first) {{ asset('storage/carIMG/'.$picture->imgName) }} @break @endif @endforeach" alt="Card image car{{ $car->id }}">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h4 class="card-title">{{ $car->brand }} {{ $car->car_type }}</h4>
+                            <ul class="list-group">
+                                <li class="list-group-item justify-content-between">
+                                    Verfügbar von <span class="badge badge-secondary">{{ $car->available_from }}</span> bis <span class="badge badge-secondary">{{ $car->available_to }}</span>
+                                </li>
+                                <li class="list-group-item justify-content-between">
+                                    Preis <span class="badge badge-secondary">{{ $car->price }}€</span> pro Tag
+                                </li>
+                                <li class="list-group-item justify-content-between">
+                                    <a class="btn btn-primary" href="cars/{{ $car->id }}" value="Details">Details</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    @endforeach
+
+
+
 @endsection
