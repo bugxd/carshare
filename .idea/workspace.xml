@@ -2,19 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f3b6eae2-c603-4081-817e-9101b207d635" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/carshare.iml" afterPath="$PROJECT_DIR$/.idea/carshare.iml" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/resources/views/cars/addCarIMG.blade.php" afterPath="$PROJECT_DIR$/resources/views/cars/addCarIMG.blade.php" />
-      <change beforePath="$PROJECT_DIR$/resources/views/cars/create.blade.php" afterPath="$PROJECT_DIR$/resources/views/cars/create.blade.php" />
-      <change beforePath="$PROJECT_DIR$/resources/views/cars/edit.blade.php" afterPath="$PROJECT_DIR$/resources/views/cars/edit.blade.php" />
-      <change beforePath="$PROJECT_DIR$/resources/views/cars/show.blade.php" afterPath="$PROJECT_DIR$/resources/views/cars/show.blade.php" />
-      <change beforePath="$PROJECT_DIR$/resources/views/inc/navbar.blade.php" afterPath="$PROJECT_DIR$/resources/views/inc/navbar.blade.php" />
-      <change beforePath="$PROJECT_DIR$/resources/views/infos/about.blade.php" afterPath="$PROJECT_DIR$/resources/views/infos/about.blade.php" />
-      <change beforePath="$PROJECT_DIR$/resources/views/infos/agb.blade.php" afterPath="$PROJECT_DIR$/resources/views/infos/agb.blade.php" />
-      <change beforePath="$PROJECT_DIR$/resources/views/infos/faq.blade.php" afterPath="$PROJECT_DIR$/resources/views/infos/faq.blade.php" />
-      <change beforePath="$PROJECT_DIR$/resources/views/infos/profile.blade.php" afterPath="$PROJECT_DIR$/resources/views/infos/profile.blade.php" />
-      <change beforePath="$PROJECT_DIR$/resources/views/infos/profileEdit.blade.php" afterPath="$PROJECT_DIR$/resources/views/infos/profileEdit.blade.php" />
-      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" />
+      <change beforePath="$PROJECT_DIR$/.env" afterPath="$PROJECT_DIR$/.env" />
+      <change beforePath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Transport/StreamBuffer.php" afterPath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Transport/StreamBuffer.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -28,30 +17,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="show.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/cars/show.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="196" column="49" lean-forward="true" selection-start-line="196" selection-start-column="49" selection-end-line="196" selection-end-column="49" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="profile.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/infos/profile.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="483">
-              <caret line="86" column="26" lean-forward="true" selection-start-line="86" selection-start-column="26" selection-end-line="86" selection-end-column="26" />
-              <folding>
-                <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#0;n#div#2;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#a#0;n#div#1;n#div#3;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#0;n#div#4;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="create.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/cars/create.blade.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -116,11 +81,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="addCarIMG.blade.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="addCarIMG.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/cars/addCarIMG.blade.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="696">
               <caret line="24" column="14" lean-forward="false" selection-start-line="24" selection-start-column="14" selection-end-line="24" selection-end-column="14" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".env" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.env">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="812">
+              <caret line="28" column="30" lean-forward="false" selection-start-line="28" selection-start-column="30" selection-end-line="28" selection-end-column="30" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="StreamBuffer.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Transport/StreamBuffer.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="783">
+              <caret line="258" column="114" lean-forward="false" selection-start-line="258" selection-start-column="114" selection-end-line="258" selection-end-column="114" />
               <folding />
             </state>
           </provider>
@@ -154,8 +139,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/public/js/jquery.js" />
-        <option value="$PROJECT_DIR$/public/js/boostrap.js" />
         <option value="$PROJECT_DIR$/public/js/license.js" />
         <option value="$PROJECT_DIR$/app/User.php" />
         <option value="$PROJECT_DIR$/resources/views/dropzone-view.blade.php" />
@@ -205,6 +188,8 @@
         <option value="$PROJECT_DIR$/resources/views/infos/profileEdit.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/welcome.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/cars/addCarIMG.blade.php" />
+        <option value="$PROJECT_DIR$/.env" />
+        <option value="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Transport/StreamBuffer.php" />
       </list>
     </option>
   </component>
@@ -369,6 +354,62 @@
               <item name="views" type="462c0819:PsiDirectoryNode" />
               <item name="cars" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="carshare" type="b2602c69:ProjectViewProjectNode" />
+              <item name="carshare" type="462c0819:PsiDirectoryNode" />
+              <item name="vendor" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="carshare" type="b2602c69:ProjectViewProjectNode" />
+              <item name="carshare" type="462c0819:PsiDirectoryNode" />
+              <item name="vendor" type="462c0819:PsiDirectoryNode" />
+              <item name="swiftmailer" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="carshare" type="b2602c69:ProjectViewProjectNode" />
+              <item name="carshare" type="462c0819:PsiDirectoryNode" />
+              <item name="vendor" type="462c0819:PsiDirectoryNode" />
+              <item name="swiftmailer" type="462c0819:PsiDirectoryNode" />
+              <item name="swiftmailer" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="carshare" type="b2602c69:ProjectViewProjectNode" />
+              <item name="carshare" type="462c0819:PsiDirectoryNode" />
+              <item name="vendor" type="462c0819:PsiDirectoryNode" />
+              <item name="swiftmailer" type="462c0819:PsiDirectoryNode" />
+              <item name="swiftmailer" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="carshare" type="b2602c69:ProjectViewProjectNode" />
+              <item name="carshare" type="462c0819:PsiDirectoryNode" />
+              <item name="vendor" type="462c0819:PsiDirectoryNode" />
+              <item name="swiftmailer" type="462c0819:PsiDirectoryNode" />
+              <item name="swiftmailer" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="classes" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="carshare" type="b2602c69:ProjectViewProjectNode" />
+              <item name="carshare" type="462c0819:PsiDirectoryNode" />
+              <item name="vendor" type="462c0819:PsiDirectoryNode" />
+              <item name="swiftmailer" type="462c0819:PsiDirectoryNode" />
+              <item name="swiftmailer" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="classes" type="462c0819:PsiDirectoryNode" />
+              <item name="Swift" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="carshare" type="b2602c69:ProjectViewProjectNode" />
+              <item name="carshare" type="462c0819:PsiDirectoryNode" />
+              <item name="vendor" type="462c0819:PsiDirectoryNode" />
+              <item name="swiftmailer" type="462c0819:PsiDirectoryNode" />
+              <item name="swiftmailer" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="classes" type="462c0819:PsiDirectoryNode" />
+              <item name="Swift" type="462c0819:PsiDirectoryNode" />
+              <item name="Transport" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -515,12 +556,12 @@
       <workItem from="1518461387782" duration="5432000" />
       <workItem from="1518508628386" duration="10113000" />
       <workItem from="1518519714997" duration="573000" />
-      <workItem from="1518522867522" duration="3131000" />
+      <workItem from="1518522867522" duration="4679000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="230165000" />
+    <option name="totallyTimeSpent" value="231713000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-12" y="-12" width="2184" height="1394" extended-state="6" />
@@ -568,20 +609,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/Http/Kernel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-826">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bootstrap/app.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-391">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/storage/logs/laravel.log">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -939,6 +966,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="696">
           <caret line="24" column="14" lean-forward="false" selection-start-line="24" selection-start-column="14" selection-end-line="24" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.env">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="812">
+          <caret line="28" column="30" lean-forward="false" selection-start-line="28" selection-start-column="30" selection-end-line="28" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Transport/StreamBuffer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="783">
+          <caret line="258" column="114" lean-forward="false" selection-start-line="258" selection-start-column="114" selection-end-line="258" selection-end-column="114" />
           <folding />
         </state>
       </provider>
