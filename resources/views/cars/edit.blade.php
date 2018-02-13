@@ -186,13 +186,13 @@
             <div id="col-md-3">
                 <input id="lng" name="lng" type="hidden"  pattern="[0-9]+([\.][0-9]+)?" step="any"/>
             </div>
-        </div>
+        </div><br>
 
         <div class="row">
             <div class="col-md-4">
                 <button class="btn btn-primary" type="submit" value="submit">Änderungen speichern</button>
             </div>
-        </div>
+        </div><br><br><br>
     </form>
     <!-- here for a delete test -->
     <form id="logout-form" method="POST" style="display:none;" action="{{ route('cars.destroy',[$car->id]) }}">

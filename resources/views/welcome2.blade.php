@@ -3,6 +3,6 @@
 
 
 @section('content')
-<img class="img-fluid" src="/carshare/public/img/welcome.jpg" alt="welcome">
+<img class="img-fluid rounded" src="/carshare/public/img/welcome.jpg" alt="welcome">
 @endsection
 
