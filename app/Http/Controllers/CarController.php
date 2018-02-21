@@ -128,6 +128,8 @@ class CarController extends Controller
             'smoking_allowed' => $request->has('smoking_allowed'),
             'description' => $request->input('description'),
             'price' => $request->input('price'),
+            'available_from' => $request->input('available_from'),
+            'available_to' => $request->input('available_to'),
             'lat' => str_replace(',','.',$request->input('lat')),
             'lng' => str_replace(',','.',$request->input('lng')),
         ]);

@@ -167,6 +167,14 @@
         </div>
 
         <div class="row">
+            <div class="col-md-3">
+                <label for="validationAvailableFrom">Verfügbar von</label>
+                <input type="text" class="form-control" id="car-available-from" name="available_from" placeholder="Y-m-d" value="{{ $car->available_from }}"  required>
+            </div>
+            <div class="col-md-3">
+                <label for="validationAvailableTo">Verfügbar bis</label>
+                <input type="text" class="form-control" id="car-available-to" name="available_to" placeholder="Y-m-d" value="{{ $car->available_to }}"  required>
+            </div>
             <div class="col-md-8 mb-3">
                 <label for="validationDefault03">Preis</label>
                 <input type="number" class="form-control" id="car-price" name="price" placeholder="Preis" value="{{ $car->price }}" required>

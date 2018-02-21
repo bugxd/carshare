@@ -38,15 +38,22 @@ class ReservationController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, Car $car)
     {
         $this->validate($request, [
             'rent_from' => 'required | date_format:"Y-m-d"|after:"2018-02-01"',
             'rent_to' => 'required | date_format:"Y-m-d"|after:rent_from'
         ]);
-
-
         if(Auth::check()) {
+
+            $car = Car::find($request->car_id);
+            $start = $car->available_from;
+            $end = $car->available_to;
+
+            $startnew = $request->input('rent_from');
+            $endnew = $request->input('rent_to');
+
+            if ($startnew >= $start && $endnew <= $end) {
 
                 $rent = Reservation::create([
 
@@ -65,6 +72,9 @@ class ReservationController extends Controller
 
                 return back()->withInput()->with('error', 'Es ist ein Fehler aufgetreten');
             }
+            return back()->withInput()->with('success', 'Auto in diesem Zeitraum nicht verfügbar!');
+
+        }
     }
 
     /**
