@@ -1,6 +1,18 @@
 @extends('layouts.app')
 
 @section('script')
+    $('document').ready(function(){
+        $( function() {
+        $( "#car-available-from" ).datepicker(
+            {dateFormat:'yy-mm-dd'}
+            );
+        } );
+        $( function() {
+        $( "#car-available-to" ).datepicker(
+            {dateFormat:'yy-mm-dd'}
+            );
+        } );
+    });
 
 @endsection
 
