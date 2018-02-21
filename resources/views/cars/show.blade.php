@@ -202,11 +202,11 @@
                     <input type="hidden" id="car-id" name="car_id" value="{{ $car->id }}">
                     <div class="row">
                         <div class="col-md-3">
-                            <label for="validationAvailableFrom">Verfügbar von</label>
+                            <label for="validationAvailableFrom">Reservieren von</label>
                             <input type="text" class="form-control" id="car-available-from" name="rent_from" placeholder="Y-m-d" required>
                         </div>
                         <div class="col-md-3">
-                            <label for="validationAvailableTo">Verfügbar bis</label>
+                            <label for="validationAvailableTo">Reservieren bis</label>
                             <input type="text" class="form-control" id="car-available-to" name="rent_to" placeholder="Y-m-d" required>
                         </div>
                     </div>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Reservation;
+use App\Car;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
@@ -39,24 +40,31 @@ class ReservationController extends Controller
      */
     public function store(Request $request)
     {
-        if(Auth::check()){
-            $rent = Reservation::create([
+        $this->validate($request, [
+            'rent_from' => 'required | date_format:"Y-m-d"|after:"2018-02-01"',
+            'rent_to' => 'required | date_format:"Y-m-d"|after:rent_from'
+        ]);
 
-                'rent_from' => $request->input('rent_from'),
-                'rent_to' => $request->input('rent_to'),
 
-                'user_id' => Auth::user()->id,
-                'car_id' => $request->input('car_id')
-            ]);
+        if(Auth::check()) {
 
-            if($rent){
-                //redirect to upload images
-                return redirect()->route('profile')->with('success','Auto wurde reserviert');
-                //return redirect()->route('cars.show',['car'=>$car])->with('success','Auto wurde erfolgreich erstellt');
+                $rent = Reservation::create([
+
+                    'rent_from' => $request->input('rent_from'),
+                    'rent_to' => $request->input('rent_to'),
+
+                    'user_id' => Auth::user()->id,
+                    'car_id' => $request->input('car_id')
+                ]);
+
+                if ($rent) {
+                    //redirect to upload images
+                    return redirect()->route('profile')->with('success', 'Auto wurde reserviert');
+                    //return redirect()->route('cars.show',['car'=>$car])->with('success','Auto wurde erfolgreich erstellt');
+                }
+
+                return back()->withInput()->with('error', 'Es ist ein Fehler aufgetreten');
             }
-
-            return back()->withInput()->with('error','Es ist ein Fehler aufgetreten');
-        }
     }
 
     /**
