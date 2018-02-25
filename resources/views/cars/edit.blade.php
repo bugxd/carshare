@@ -201,10 +201,10 @@
         </div>
         <div id="row">
             <div id="col-md-3">
-                <input id="lat" name="lat" type="hidden"  pattern="[0-9]+([\.][0-9]+)?" step="any"/>
+                <input id="lat" name="lat" type="hidden" value="{{ $car->lat }}"  pattern="[0-9]+([\.][0-9]+)?" step="any"/>
             </div>
             <div id="col-md-3">
-                <input id="lng" name="lng" type="hidden"  pattern="[0-9]+([\.][0-9]+)?" step="any"/>
+                <input id="lng" name="lng" type="hidden" value="{{ $car->lng }}"  pattern="[0-9]+([\.][0-9]+)?" step="any"/>
             </div>
         </div><br>
 
